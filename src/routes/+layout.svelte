@@ -1,5 +1,6 @@
 <script>
 	import { browser } from '$app/environment';
+	import LeitorVoz from '$lib/LeitorVoz.svelte';
 
 	let { children } = $props();
 
@@ -72,6 +73,8 @@
 <div id="conteudo-principal">
 	{@render children()}
 </div>
+
+<LeitorVoz />
 
 <footer>
 	<div class="footer-inner">
