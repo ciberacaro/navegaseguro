@@ -1,11 +1,13 @@
 <script>
 	import { browser } from '$app/environment';
+	import { page } from '$app/stores';
 	import LeitorVoz from '$lib/LeitorVoz.svelte';
 
 	let { children } = $props();
 
+	let menuAberto = $state(false);
 	let altoContraste = $state(false);
-	let tamanhoLetra = $state('normal'); // 'normal' | 'grande' | 'muitogrande'
+	let tamanhoLetra = $state('normal');
 
 	if (browser) {
 		altoContraste = localStorage.getItem('ac') === '1';
@@ -21,11 +23,25 @@
 		localStorage.setItem('tl', tamanhoLetra);
 	});
 
+	$effect(() => {
+		// fechar menu ao navegar
+		page;
+		menuAberto = false;
+	});
+
 	function cicloLetra() {
 		tamanhoLetra = tamanhoLetra === 'normal' ? 'grande' : tamanhoLetra === 'grande' ? 'muitogrande' : 'normal';
 	}
 
 	const legendaLetra = { normal: 'A', grande: 'A+', muitogrande: 'A++' };
+
+	const navLinks = [
+		{ href: '/', label: 'Início' },
+		{ href: '/ferramentas', label: 'Ferramentas' },
+		{ href: '/recursos', label: 'Recursos' },
+		{ href: '/glossario', label: 'Glossário' },
+		{ href: '/sobre', label: 'Sobre' },
+	];
 </script>
 
 <svelte:head>
@@ -34,116 +50,79 @@
 	<meta name="description" content="NavegaSeguro — Plataforma de sensibilização para cibersegurança adaptada a cada faixa etária" />
 	<link rel="preconnect" href="https://fonts.googleapis.com" />
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
-	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Nunito:wght@400;700;800;900&display=swap" rel="stylesheet" />
+	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Nunito:wght@400;700;800;900&display=swap" rel="stylesheet" />
 </svelte:head>
 
 <a href="#conteudo-principal" class="saltar-conteudo">Saltar para o conteúdo</a>
 
-<div class="barra-acessibilidade" role="toolbar" aria-label="Opções de acessibilidade">
-	<span class="a11y-label">Acessibilidade:</span>
-	<button
-		class="a11y-btn"
-		class:ativo={tamanhoLetra !== 'normal'}
-		onclick={cicloLetra}
-		aria-label="Tamanho da letra: {legendaLetra[tamanhoLetra]}"
-		title="Alterar tamanho da letra"
-	>{legendaLetra[tamanhoLetra]}</button>
-	<button
-		class="a11y-btn"
-		class:ativo={altoContraste}
-		onclick={() => altoContraste = !altoContraste}
-		aria-pressed={altoContraste}
-		aria-label="Alto contraste {altoContraste ? 'ativado' : 'desativado'}"
-		title="Alternar alto contraste"
-	>◑</button>
-</div>
+<header>
+	<nav aria-label="Navegação principal">
+		<a href="/" class="logo">🛡️ <span>NavegaSeguro</span></a>
 
-<nav aria-label="Navegação principal">
-	<a href="/" class="logo">🛡️ NavegaSeguro</a>
-	<div class="nav-links">
-		<a href="/checklist">Checklist</a>
-		<a href="/quiz-completo">Quiz</a>
-		<a href="/educadores">Educadores</a>
-		<a href="/glossario">Glossário</a>
-		<a href="/recursos">Recursos</a>
-		<a href="/sobre">Sobre</a>
-	</div>
-</nav>
+		<div class="nav-desktop">
+			{#each navLinks as l}
+				<a href={l.href} class:atual={$page.url.pathname === l.href}>{l.label}</a>
+			{/each}
+			<a href="/emergencia" class="btn-emergencia-nav">🚨 Emergência</a>
+		</div>
+
+		<div class="nav-acoes">
+			<button class="a11y-btn" onclick={cicloLetra} aria-label="Tamanho da letra: {legendaLetra[tamanhoLetra]}" title="Tamanho da letra" class:ativo={tamanhoLetra !== 'normal'}>
+				{legendaLetra[tamanhoLetra]}
+			</button>
+			<button class="a11y-btn" onclick={() => altoContraste = !altoContraste} aria-pressed={altoContraste} aria-label="Alto contraste" title="Alto contraste" class:ativo={altoContraste}>
+				◑
+			</button>
+			<button class="hamburger" onclick={() => menuAberto = !menuAberto} aria-expanded={menuAberto} aria-label={menuAberto ? 'Fechar menu' : 'Abrir menu'}>
+				{menuAberto ? '✕' : '☰'}
+			</button>
+		</div>
+	</nav>
+
+	{#if menuAberto}
+		<div class="menu-mobile" role="dialog" aria-label="Menu de navegação">
+			{#each navLinks as l}
+				<a href={l.href}>{l.label}</a>
+			{/each}
+			<a href="/emergencia" class="menu-emergencia">🚨 Emergência</a>
+		</div>
+	{/if}
+</header>
 
 <div id="conteudo-principal">
 	{@render children()}
 </div>
 
-<LeitorVoz />
-
 <footer>
 	<div class="footer-inner">
 		<p class="footer-logo">🛡️ NavegaSeguro</p>
-		<p>Conteúdo gratuito e sem fins lucrativos, em língua portuguesa.</p>
-		<nav aria-label="Navegação de rodapé">
-			<div class="footer-links">
-				<a href="/checklist">Checklist</a>
-				<a href="/quiz-completo">Quiz</a>
-				<a href="/educadores">Educadores</a>
-				<a href="/contacto">Parcerias</a>
-				<a href="/sobre">Sobre</a>
-				<a href="/recursos">Recursos</a>
-				<a href="/glossario">Glossário</a>
-			</div>
+		<p class="footer-desc">Gratuito · Sem publicidade · Sem recolha de dados · PT-PT</p>
+		<nav aria-label="Navegação de rodapé" class="footer-links">
+			<a href="/ferramentas">Ferramentas</a>
+			<a href="/recursos">Recursos</a>
+			<a href="/glossario">Glossário</a>
+			<a href="/educadores">Educadores</a>
+			<a href="/contacto">Parcerias</a>
+			<a href="/sobre">Sobre</a>
 		</nav>
-		<p class="footer-note">Parceria com CNCS · SeguraNet · GNR · Linha Internet Segura 800 21 90 90</p>
+		<p class="footer-note">Linha Internet Segura <a href="tel:800219090">800 21 90 90</a> · APAV <a href="tel:116006">116 006</a> · Emergência <a href="tel:112">112</a></p>
 	</div>
 </footer>
 
+<LeitorVoz />
+
 <style>
-	/* ── Reset ── */
-	:global(*, *::before, *::after) {
-		box-sizing: border-box;
-		margin: 0;
-		padding: 0;
-	}
+	/* ── Reset global ── */
+	:global(*, *::before, *::after) { box-sizing: border-box; margin: 0; padding: 0; }
+	:global(body) { font-family: 'Inter', sans-serif; background: #f4f6fb; color: #1a1a2e; line-height: 1.6; }
+	:global(a) { color: inherit; text-decoration: none; }
+	:global(h1, h2, h3) { line-height: 1.2; }
+	:global(:focus-visible) { outline: 3px solid #0984E3; outline-offset: 3px; border-radius: 3px; }
+	:global([data-letra='grande']) { font-size: 112%; }
+	:global([data-letra='muitogrande']) { font-size: 125%; }
+	:global(.alto-contraste) { filter: contrast(1.5) saturate(0.8); }
 
-	:global(body) {
-		font-family: 'Inter', sans-serif;
-		background: #f8faff;
-		color: #1a1a2e;
-		line-height: 1.6;
-	}
-
-	:global(a) {
-		color: inherit;
-		text-decoration: none;
-	}
-
-	:global(h1, h2, h3) {
-		line-height: 1.2;
-	}
-
-	/* ── Foco visível — obrigatório para navegação por teclado ── */
-	:global(:focus-visible) {
-		outline: 3px solid #0984E3;
-		outline-offset: 3px;
-		border-radius: 3px;
-	}
-
-	/* ── Tamanho de letra ── */
-	:global([data-letra='grande']) {
-		font-size: 112%;
-	}
-	:global([data-letra='muitogrande']) {
-		font-size: 125%;
-	}
-
-	/* ── Alto contraste ── */
-	:global(.alto-contraste) {
-		filter: contrast(1.5) saturate(0.8);
-	}
-	:global(.alto-contraste body) {
-		background: #fff;
-		color: #000;
-	}
-
-	/* ── Saltar para conteúdo ── */
+	/* ── Skip link ── */
 	.saltar-conteudo {
 		position: absolute;
 		top: -100%;
@@ -155,92 +134,131 @@
 		font-weight: 700;
 		font-size: 0.9rem;
 		z-index: 9999;
-		transition: top 0.2s;
 	}
-	.saltar-conteudo:focus {
+	.saltar-conteudo:focus { top: 0; }
+
+	/* ── Header / Nav ── */
+	header {
+		background: #fff;
+		border-bottom: 1px solid #e8eaf0;
+		position: sticky;
 		top: 0;
+		z-index: 200;
 	}
 
-	/* ── Barra de acessibilidade ── */
-	.barra-acessibilidade {
-		display: flex;
-		align-items: center;
-		gap: 0.5rem;
-		background: #1a1a2e;
-		padding: 0.3rem 1.5rem;
-		justify-content: flex-end;
-	}
-
-	.a11y-label {
-		font-size: 0.75rem;
-		color: #aaa;
-		margin-right: 0.25rem;
-	}
-
-	.a11y-btn {
-		background: transparent;
-		border: 1px solid #444;
-		color: #ccc;
-		border-radius: 4px;
-		padding: 0.2rem 0.6rem;
-		font-size: 0.8rem;
-		font-weight: 700;
-		font-family: inherit;
-		cursor: pointer;
-		transition: background 0.15s, color 0.15s;
-		line-height: 1.4;
-	}
-	.a11y-btn:hover {
-		background: #333;
-		color: #fff;
-	}
-	.a11y-btn.ativo {
-		background: #0984E3;
-		border-color: #0984E3;
-		color: #fff;
-	}
-
-	/* ── Nav ── */
 	nav {
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
-		padding: 1rem 2rem;
-		background: #fff;
-		box-shadow: 0 1px 4px rgba(0,0,0,0.08);
-		position: sticky;
-		top: 0;
-		z-index: 100;
+		padding: 0.875rem 1.5rem;
+		max-width: 1100px;
+		margin: 0 auto;
+		gap: 1rem;
 	}
 
 	.logo {
 		font-family: 'Nunito', sans-serif;
 		font-weight: 900;
-		font-size: 1.25rem;
+		font-size: 1.2rem;
 		color: #1a1a2e;
-	}
-
-	.nav-links {
 		display: flex;
-		gap: 1.5rem;
+		align-items: center;
+		gap: 0.35rem;
+		flex-shrink: 0;
 	}
 
-	.nav-links a {
+	.nav-desktop {
+		display: flex;
+		align-items: center;
+		gap: 1.5rem;
+		flex: 1;
+		justify-content: center;
+	}
+
+	.nav-desktop a {
 		font-size: 0.9rem;
 		font-weight: 500;
 		color: #555;
 		transition: color 0.2s;
+		white-space: nowrap;
 	}
 
-	.nav-links a:hover {
+	.nav-desktop a:hover, .nav-desktop a.atual { color: #1a1a2e; }
+
+	.btn-emergencia-nav {
+		background: #FF6B6B;
+		color: white !important;
+		font-weight: 700 !important;
+		font-size: 0.82rem !important;
+		padding: 0.4rem 0.9rem;
+		border-radius: 999px;
+		transition: background 0.2s !important;
+	}
+	.btn-emergencia-nav:hover { background: #e55a5a !important; }
+
+	.nav-acoes {
+		display: flex;
+		align-items: center;
+		gap: 0.4rem;
+		flex-shrink: 0;
+	}
+
+	.a11y-btn {
+		background: transparent;
+		border: 1px solid #ddd;
+		color: #666;
+		border-radius: 6px;
+		padding: 0.3rem 0.55rem;
+		font-size: 0.8rem;
+		font-weight: 700;
+		font-family: inherit;
+		cursor: pointer;
+		transition: all 0.15s;
+		line-height: 1.3;
+	}
+	.a11y-btn:hover { border-color: #0984E3; color: #0984E3; }
+	.a11y-btn.ativo { background: #0984E3; border-color: #0984E3; color: #fff; }
+
+	.hamburger {
+		display: none;
+		background: transparent;
+		border: 1px solid #ddd;
 		color: #1a1a2e;
+		border-radius: 6px;
+		padding: 0.3rem 0.6rem;
+		font-size: 1.1rem;
+		cursor: pointer;
+		font-family: inherit;
+		line-height: 1.3;
+	}
+
+	/* ── Menu mobile ── */
+	.menu-mobile {
+		border-top: 1px solid #f0f0f0;
+		display: flex;
+		flex-direction: column;
+	}
+
+	.menu-mobile a {
+		padding: 1rem 1.5rem;
+		font-size: 1rem;
+		font-weight: 500;
+		color: #333;
+		border-bottom: 1px solid #f5f5f5;
+		transition: background 0.15s;
+	}
+	.menu-mobile a:hover { background: #f8faff; }
+
+	.menu-emergencia {
+		color: #FF6B6B !important;
+		font-weight: 700 !important;
 	}
 
 	/* ── Footer ── */
 	footer {
 		background: #1a1a2e;
-		color: #ccc;
-		padding: 3rem 2rem;
+		color: #aaa;
+		padding: 2.5rem 1.5rem;
 		margin-top: 4rem;
 		text-align: center;
 	}
@@ -250,47 +268,29 @@
 		margin: 0 auto;
 		display: flex;
 		flex-direction: column;
-		gap: 0.75rem;
+		gap: 0.65rem;
 	}
 
-	.footer-logo {
-		font-family: 'Nunito', sans-serif;
-		font-weight: 900;
-		font-size: 1.1rem;
-		color: #fff;
-	}
+	.footer-logo { font-family: 'Nunito', sans-serif; font-weight: 900; font-size: 1.1rem; color: #fff; }
+	.footer-desc { font-size: 0.8rem; }
 
 	.footer-links {
 		display: flex;
-		gap: 1.5rem;
+		gap: 1.25rem;
 		justify-content: center;
 		flex-wrap: wrap;
 	}
 
-	.footer-links a {
-		color: #aaa;
-		font-size: 0.85rem;
-		transition: color 0.2s;
-	}
+	.footer-links a { color: #888; font-size: 0.82rem; transition: color 0.2s; }
+	.footer-links a:hover { color: #fff; }
 
-	.footer-links a:hover {
-		color: #fff;
-	}
+	.footer-note { font-size: 0.78rem; color: #666; }
+	.footer-note a { color: #888; text-decoration: underline; }
+	.footer-note a:hover { color: #fff; }
 
-	.footer-note {
-		font-size: 0.8rem;
-		color: #888;
-	}
-
-	@media (max-width: 600px) {
-		nav {
-			padding: 1rem;
-		}
-		.nav-links {
-			gap: 1rem;
-		}
-		.barra-acessibilidade {
-			padding: 0.3rem 1rem;
-		}
+	/* ── Responsive ── */
+	@media (max-width: 768px) {
+		.nav-desktop { display: none; }
+		.hamburger { display: block; }
 	}
 </style>
