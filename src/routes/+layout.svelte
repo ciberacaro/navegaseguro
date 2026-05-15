@@ -139,11 +139,12 @@
 	:global([data-letra='grande']) { font-size: 112%; }
 	:global([data-letra='muitogrande']) { font-size: 125%; }
 
-	/* ── Alto contraste WCAG (preto sobre branco, sem cores decorativas) ── */
+	/* ── Alto contraste WCAG (branco sobre preto, sem cores decorativas) ──
+	   Contraste branco-sobre-preto: 21:1 · Amarelo-sobre-preto: 19.5:1 (AAA) */
 	:global(.alto-contraste),
 	:global(.alto-contraste body) {
-		background: #fff !important;
-		color: #000 !important;
+		background: #000 !important;
+		color: #fff !important;
 	}
 	:global(.alto-contraste *) {
 		background-image: none !important;
@@ -151,15 +152,19 @@
 		box-shadow: none !important;
 	}
 	:global(.alto-contraste *:not(button):not(.btn-emergencia-nav):not(.menu-emergencia):not(.btn-emergencia):not(.btn-tel):not(.btn-principal):not(.btn-secundario):not(.alerta-badge):not(.recurso-tag):not(.tag):not(.cat-badge):not(.linha-card):not(input):not(textarea)) {
-		color: #000 !important;
+		color: #fff !important;
 		background-color: transparent !important;
 	}
 	:global(.alto-contraste a) {
-		color: #0000EE !important;
+		color: #FFFF00 !important;
 		text-decoration: underline !important;
 	}
 	:global(.alto-contraste a:visited) {
-		color: #551A8B !important;
+		color: #FFB0FF !important;
+	}
+	:global(.alto-contraste a:focus-visible) {
+		outline: 3px solid #FFFF00 !important;
+		outline-offset: 3px !important;
 	}
 	:global(.alto-contraste button),
 	:global(.alto-contraste .btn-principal),
@@ -167,25 +172,40 @@
 	:global(.alto-contraste .btn-emergencia),
 	:global(.alto-contraste .btn-tel),
 	:global(.alto-contraste .btn-emergencia-nav) {
-		background: #000 !important;
-		color: #fff !important;
-		border: 2px solid #000 !important;
+		background: #fff !important;
+		color: #000 !important;
+		border: 2px solid #fff !important;
+	}
+	:global(.alto-contraste button:focus-visible) {
+		outline: 3px solid #FFFF00 !important;
+		outline-offset: 3px !important;
 	}
 	:global(.alto-contraste header),
 	:global(.alto-contraste footer),
 	:global(.alto-contraste .topo),
 	:global(.alto-contraste .hero),
 	:global(.alto-contraste .emergencia-strip) {
-		background: #fff !important;
-		color: #000 !important;
-		border-bottom: 2px solid #000 !important;
+		background: #000 !important;
+		color: #fff !important;
+		border-bottom: 2px solid #fff !important;
 	}
 	:global(.alto-contraste footer),
 	:global(.alto-contraste footer *) {
-		color: #000 !important;
+		color: #fff !important;
 	}
 	:global(.alto-contraste *) {
-		border-color: #000 !important;
+		border-color: #fff !important;
+	}
+	:global(.alto-contraste input),
+	:global(.alto-contraste textarea),
+	:global(.alto-contraste select) {
+		background: #000 !important;
+		color: #fff !important;
+		border: 2px solid #fff !important;
+	}
+	:global(.alto-contraste ::placeholder) {
+		color: #ccc !important;
+		opacity: 1;
 	}
 	:global(.alto-contraste img),
 	:global(.alto-contraste svg) {
