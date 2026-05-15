@@ -80,7 +80,7 @@
 <main>
 	<section class="hero">
 		<div class="hero-inner">
-			<span class="badge">🇵🇹 Em português europeu</span>
+			<span class="badge">🇵🇹 Em português europeu · Versão 1.0</span>
 			<h1>Navega na internet<br /><span class="destaque">com segurança</span></h1>
 			<p class="subtitulo">Aprende a proteger-te online — com conteúdo feito para a tua idade, em português, gratuito e sem publicidade.</p>
 			<a href="#escolhe" class="btn-principal">Escolhe a tua faixa etária ↓</a>
