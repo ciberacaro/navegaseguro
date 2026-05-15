@@ -1,4 +1,6 @@
 <script>
+	import VerificadorPassword from '$lib/VerificadorPassword.svelte';
+
 	const categorias = [
 		{
 			titulo: 'Entidades oficiais portuguesas',
@@ -78,6 +80,13 @@
 					</a>
 				{/each}
 			</div>
+			{#if cat.titulo === 'Ferramentas gratuitas de proteção'}
+				<div class="verificador-bloco">
+					<h3>🔐 Verificador de força de palavra-passe</h3>
+					<p class="verificador-intro">Testa uma palavra-passe de exemplo — <strong>nunca a tua real.</strong> Calculado localmente, nada é enviado para qualquer servidor.</p>
+					<VerificadorPassword />
+				</div>
+			{/if}
 		</section>
 	{/each}
 </main>
@@ -228,5 +237,31 @@
 		font-size: 0.85rem;
 		font-weight: 600;
 		color: #0984E3;
+	}
+
+	.verificador-bloco {
+		margin-top: 1.5rem;
+		padding: 1.5rem;
+		background: #f8faff;
+		border: 1px solid #e0e7ff;
+		border-radius: 0.75rem;
+	}
+
+	.verificador-bloco h3 {
+		font-family: 'Nunito', sans-serif;
+		font-weight: 800;
+		font-size: 1.1rem;
+		margin-bottom: 0.5rem;
+		color: #1a1a2e;
+	}
+
+	.verificador-intro {
+		font-size: 0.875rem;
+		color: #555;
+		margin-bottom: 1.25rem;
+		background: #fff9e6;
+		border: 1px solid #FFE9CC;
+		border-radius: 0.5rem;
+		padding: 0.6rem 0.9rem;
 	}
 </style>
