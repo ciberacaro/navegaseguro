@@ -160,10 +160,10 @@
 		<div class="container">
 			<h2>Em caso de emergência</h2>
 			<div class="contactos">
-				<a href="tel:116" class="contacto-card">
+				<a href="tel:116006" class="contacto-card">
 					<span>📞</span>
-					<strong>116</strong>
-					<span>Linha de Apoio a Vítimas de Crime</span>
+					<strong>116 006</strong>
+					<span>APAV — Apoio à Vítima</span>
 				</a>
 				<a href="tel:18002122" class="contacto-card">
 					<span>🛡️</span>

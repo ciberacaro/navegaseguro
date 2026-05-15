@@ -4,57 +4,112 @@
 	const dados = {
 		emoji: '🧸',
 		titulo: 'Pré-Escolar',
-		subtitulo: '3 – 5 anos · Para crianças e os seus pais',
+		subtitulo: '3 – 5 anos · Uma ajudinha para os pais',
 		cor: '#FF9F43',
 		fundo: '#FFF5E6',
-		introducao: 'As crianças pequenas ainda não usam dispositivos sozinhas, mas já veem os pais, irmãos e avós a usar o telemóvel e o tablet. É nesta fase que se formam os primeiros hábitos digitais. O objetivo não é assustar — é criar rotinas simples e seguras.',
+		variante: 'infantil',
+		introducao: 'Olá! Esta página é para ler com um adulto. Os mais pequeninos ainda não usam o telemóvel sozinhos, mas já gostam de ver vídeos, jogar e mexer no tablet. Vamos aprender juntos algumas regras simples para que tudo corra bem!',
 		temas: [
 			{
-				icone: '🔒',
-				titulo: 'Pedir sempre permissão',
-				conteudo: 'Antes de pegar no telemóvel ou tablet de um adulto, a criança deve sempre pedir. Não porque seja perigoso, mas porque é uma regra da casa — como lavar as mãos antes de comer.'
+				icone: '🤝',
+				titulo: 'Pergunta primeiro',
+				conteudo: 'Antes de pegares no telemóvel ou no tablet, pede sempre a um adulto. É como pedir para abrir o frigorífico: pede-se primeiro!'
 			},
 			{
-				icone: '🧑‍🤝‍🧑',
-				titulo: 'Estranhos online também são estranhos',
-				conteudo: 'Tal como não falamos com estranhos na rua, não falamos com pessoas que não conhecemos no ecrã. Se aparecer alguém desconhecido, chamamos um adulto.'
+				icone: '👀',
+				titulo: 'Vê com um grande',
+				conteudo: 'Os vídeos e jogos divertidos veem-se sempre com um adulto perto. Se vires algo que te assuste, chama logo o pai, a mãe ou os avós.'
+			},
+			{
+				icone: '🚫',
+				titulo: 'Pessoas que não conheces',
+				conteudo: 'Se alguém que tu não conheces aparecer no ecrã a falar contigo, chama um adulto. Não falas com estranhos na rua — também não falas com estranhos no telemóvel.'
 			},
 			{
 				icone: '⏰',
-				titulo: 'Tempo de ecrã',
-				conteudo: 'Os especialistas recomendam máximo de 1 hora por dia para crianças desta idade, sempre com supervisão de um adulto. Ecrãs na hora de dormir perturbam o sono.'
-			},
-			{
-				icone: '📸',
-				titulo: 'Sem fotos sem permissão',
-				conteudo: 'Não se tiram fotos a outras pessoas — nem a outras crianças — sem pedir autorização. Esta regra começa cedo e fica para a vida.'
+				titulo: 'Hora de parar',
+				conteudo: 'Quando o adulto disser que está na hora de parar, paramos! Os olhos também precisam de descansar e brincar com os brinquedos a sério.'
 			}
 		],
 		dicas: [
-			'Usa aplicações e plataformas com controlo parental ativo (ex.: YouTube Kids, perfis de criança no tablet)',
-			'Estabelece zonas e horários sem ecrãs — refeições, hora de dormir, espaço exterior',
-			'Senta-te ao lado da criança enquanto ela usa o dispositivo — usa esse tempo para conversar sobre o que vê',
-			'Explica as regras com exemplos simples: "O tablet vai dormir às 19h, tal como tu"',
-			'Nunca uses o ecrã como recompensa ou castigo — isso aumenta o desejo pelo dispositivo'
+			'Pede sempre a um adulto antes de usar o telemóvel ou tablet',
+			'Vê sempre vídeos com um adulto por perto',
+			'Se vires alguma coisa que te assuste, chama logo um grande',
+			'Quando o adulto disser para parar, paramos sem chorar',
+			'Não falas com pessoas que não conheces, nem na rua nem no ecrã'
+		],
+		historias: [
+			{
+				titulo: 'A Maria e o vídeo estranho',
+				narrativa: 'A Maria tem 4 anos. Estava a ver vídeos de gatinhos no telemóvel da mãe e, de repente, apareceu um vídeo com sons assustadores. A Maria não se assustou sozinha — chamou logo a mãe: "Mãe, vê isto!". A mãe fechou o vídeo e mostrou à Maria como pedir ajuda sempre que algo a deixa triste ou assustada.',
+				licao: 'Quando algo no ecrã te faz sentir mal, chama logo um adulto. Ele resolve tudo.'
+			},
+			{
+				titulo: 'O João e a hora de parar',
+				narrativa: 'O João, 5 anos, estava a jogar no tablet há muito tempo. O pai disse "está na hora de parar, vamos brincar lá fora". O João ficou chateado, mas lembrou-se de que os olhos também precisam de descansar. Foi brincar com a bicicleta — e até teve mais piada do que o tablet!',
+				licao: 'O telemóvel e o tablet não fogem. Brincar lá fora também é muito divertido.'
+			}
 		],
 		perguntas: [
 			{
-				pergunta: 'O que deve a criança fazer se quiser usar o tablet?',
-				opcoes: ['Pegar sem dizer nada', 'Pedir permissão a um adulto', 'Esperar que o adulto esteja distraído', 'Usar só uns minutinhos'],
+				pergunta: 'Queres ver vídeos no telemóvel. O que fazes primeiro?',
+				opcoes: ['Pego e começo a ver', 'Peço a um adulto', 'Escondo-me debaixo da cama', 'Espero que o adulto esteja distraído'],
 				correta: 1,
-				explicacao: 'Pedir permissão é a regra fundamental. Cria o hábito de respeito pelo dispositivo e pelo adulto responsável.'
+				explicacao: 'Pedimos sempre a um adulto antes de mexer no telemóvel. É a regra mais importante!'
 			},
 			{
-				pergunta: 'Uma pessoa desconhecida fala com a criança num jogo online. O que deve acontecer?',
-				opcoes: ['Responder normalmente', 'Ignorar e continuar a jogar', 'Chamar um adulto de imediato', 'Dar o nome e a escola'],
+				pergunta: 'Aparece uma pessoa que não conheces a falar contigo no jogo. O que fazes?',
+				opcoes: ['Falo com ela', 'Chamo logo um adulto', 'Conto-lhe onde moro', 'Pergunto o nome dela'],
+				correta: 1,
+				explicacao: 'Chamamos sempre um adulto. Estranhos no ecrã são como estranhos na rua.'
+			},
+			{
+				pergunta: 'O telemóvel mostra uma coisa que te assusta. Tu...',
+				opcoes: ['Choro sozinho', 'Continuo a ver', 'Chamo logo a mãe, o pai ou os avós', 'Tapo os olhos'],
 				correta: 2,
-				explicacao: 'Estranhos online são como estranhos na rua. A criança deve sempre chamar um adulto — sem vergonha nem medo de se meter em sarilhos.'
+				explicacao: 'Chamar um adulto resolve tudo. Eles ajudam-te e tiram o que te assustou.'
 			},
 			{
-				pergunta: 'Até que horas é recomendado usar ecrãs antes de dormir?',
-				opcoes: ['Até adormecer', 'Parar pelo menos 1 hora antes de dormir', 'Usar no quarto com volume baixo está bem', 'Depende do conteúdo'],
+				pergunta: 'O adulto diz "está na hora de parar". Tu fazes...',
+				opcoes: ['Continuo mais um bocadinho às escondidas', 'Faço uma grande birra', 'Paro e vou brincar com outra coisa', 'Escondo o tablet'],
+				correta: 2,
+				explicacao: 'Quando o adulto diz para parar, paramos. Os olhinhos cansam-se e há tantas coisas divertidas para fazer!'
+			},
+			{
+				pergunta: 'Podes dar o teu nome e a tua morada a alguém que conheceste num jogo?',
+				opcoes: ['Sim, se for simpático', 'Só o nome', 'Nunca — isso é segredo', 'Só se for amigo dos meus pais'],
+				correta: 2,
+				explicacao: 'O teu nome e a tua morada nunca se dizem a desconhecidos. São coisas tuas e da família.'
+			},
+			{
+				pergunta: 'Um vídeo está a fazer barulhos esquisitos e palavras feias. Tu...',
+				opcoes: ['Continuo a ver porque é engraçado', 'Mostro aos amigos', 'Chamo um adulto', 'Aumento o volume'],
+				correta: 2,
+				explicacao: 'Vídeos com coisas feias não são para crianças. Chamamos sempre um adulto para ele tirar.'
+			},
+			{
+				pergunta: 'Os teus olhos depois de muito tempo no ecrã ficam...',
+				opcoes: ['Mais bonitos', 'Cansados e a arder', 'Maiores', 'Mais fortes'],
 				correta: 1,
-				explicacao: 'A luz azul dos ecrãs engana o cérebro e dificulta o sono. Desligar pelo menos 1 hora antes de dormir ajuda a ter uma noite mais tranquila.'
+				explicacao: 'Os olhos cansam-se de olhar para o ecrã muito tempo. Por isso fazemos pausas para descansar!'
+			},
+			{
+				pergunta: 'Antes de dormir, vês um vídeo emocionante no telemóvel. O que pode acontecer?',
+				opcoes: ['Durmo melhor', 'Fico mais inteligente', 'Tenho dificuldade em adormecer', 'Tenho sonhos com gatinhos'],
+				correta: 2,
+				explicacao: 'A luz do telemóvel engana o cérebro. Antes de dormir, é melhor um livro com a família!'
+			},
+			{
+				pergunta: 'Posso tirar uma foto sem pedir autorização à pessoa?',
+				opcoes: ['Sim, se ela estiver a sorrir', 'Não, pedimos sempre primeiro', 'Só se for um animal', 'Sim, se for engraçado'],
+				correta: 1,
+				explicacao: 'Pedimos sempre antes de tirar uma foto a alguém. É uma regra de respeito por todos.'
+			},
+			{
+				pergunta: 'O que é mais divertido?',
+				opcoes: ['Estar no tablet 5 horas seguidas', 'Brincar lá fora, ler com a família e usar o tablet pouquinho', 'Ver televisão até muito tarde', 'Comer enquanto se vê vídeos'],
+				correta: 1,
+				explicacao: 'A vida é cheia de coisas divertidas! O tablet é só uma delas. Brincar, ler e estar com a família é o melhor.'
 			}
 		]
 	};

@@ -4,27 +4,61 @@
 			titulo: 'Entidades oficiais portuguesas',
 			recursos: [
 				{ nome: 'CNCS — Centro Nacional de Cibersegurança', desc: 'Autoridade nacional de cibersegurança. Alertas, relatórios, recursos educativos e apoio a incidentes.', url: 'https://www.cncs.gov.pt', tag: 'Oficial' },
-				{ nome: 'SeguraNet', desc: 'Portal de segurança online para crianças, jovens, pais e professores. Criado pela FCT.', url: 'https://www.seguranet.pt', tag: 'Educação' },
-				{ nome: 'Linha Internet Segura', desc: 'Linha gratuita de apoio a situações de risco online: 1800 21 22 23 (gratuita, 24h).', url: 'https://www.internetcivil.pt', tag: 'Apoio' },
-				{ nome: 'GNR — Núcleo de Investigação Criminal', desc: 'Para reportar crimes informáticos e cibercrime. Pode fazer queixa na esquadra ou online.', url: 'https://www.gnr.pt', tag: 'Denúncia' },
-				{ nome: 'Polícia Judiciária — Unidade de Cibercrime', desc: 'Para crimes informáticos graves (hacking, fraudes bancárias, predadores online).', url: 'https://www.policiajudiciaria.pt', tag: 'Denúncia' },
-				{ nome: 'CMVM — Comissão do Mercado de Valores Mobiliários', desc: 'Verifica se uma plataforma de investimento tem autorização legal para operar em Portugal.', url: 'https://www.cmvm.pt', tag: 'Finanças' }
+				{ nome: 'CNPD — Comissão Nacional de Proteção de Dados', desc: 'Entidade que fiscaliza o cumprimento do RGPD em Portugal. Para queixas sobre uso indevido dos seus dados pessoais.', url: 'https://www.cnpd.pt', tag: 'RGPD' },
+				{ nome: 'SeguraNet', desc: 'Portal de segurança online para crianças, jovens, pais e professores. Criado pela DGE com apoio europeu.', url: 'https://www.seguranet.pt', tag: 'Educação' },
+				{ nome: 'Linha Internet Segura', desc: 'Linha gratuita de apoio a situações de risco online: 1800 21 22 23 (gratuita, 24h). Confidencial.', url: 'https://www.internetsegura.pt', tag: 'Apoio' },
+				{ nome: 'CMVM — Comissão do Mercado de Valores Mobiliários', desc: 'Verifica se uma plataforma de investimento tem autorização legal para operar em Portugal.', url: 'https://www.cmvm.pt', tag: 'Finanças' },
+				{ nome: 'Banco de Portugal — Portal do Cliente Bancário', desc: 'Informação sobre direitos dos clientes bancários e como reclamar de bancos em Portugal.', url: 'https://clientebancario.bportugal.pt', tag: 'Banca' },
+				{ nome: 'ANACOM', desc: 'Reguladora das comunicações em Portugal. Para queixas sobre operadoras de telecomunicações.', url: 'https://www.anacom.pt', tag: 'Telecom' },
+				{ nome: 'DECO Proteste', desc: 'Associação de defesa do consumidor — apoio em fraudes de compras online, serviços digitais e telecomunicações.', url: 'https://www.deco.proteste.pt', tag: 'Consumidor' }
+			]
+		},
+		{
+			titulo: 'Forças de segurança e denúncia',
+			recursos: [
+				{ nome: 'Polícia Judiciária — UNC3T', desc: 'Unidade Nacional de Combate ao Cibercrime e à Criminalidade Tecnológica. Crimes informáticos graves, fraudes bancárias, predadores online.', url: 'https://www.policiajudiciaria.pt', tag: 'Denúncia' },
+				{ nome: 'GNR — Núcleo de Investigação Criminal', desc: 'Investigação de crimes informáticos. Queixa na esquadra ou via formulário online.', url: 'https://www.gnr.pt', tag: 'Denúncia' },
+				{ nome: 'PSP — Portal Queixa Eletrónica', desc: 'Denúncia de crimes online diretamente à PSP, sem sair de casa.', url: 'https://queixaselectronicas.mai.gov.pt', tag: 'Denúncia' },
+				{ nome: 'Ministério Público — Portal de Denúncias', desc: 'Para crimes públicos. Denúncia online sem identificação obrigatória.', url: 'https://denuncias.ministeriopublico.pt', tag: 'Denúncia' }
+			]
+		},
+		{
+			titulo: 'Apoio a vítimas',
+			recursos: [
+				{ nome: 'APAV — Associação Portuguesa de Apoio à Vítima', desc: 'Apoio jurídico, psicológico e social a vítimas de crime. Gratuito e confidencial. Linha: 116 006.', url: 'https://apav.pt', tag: 'Apoio' },
+				{ nome: 'APAV — Linha Internet Segura', desc: 'Vertente da APAV especializada em violência online. Ajuda em sextorsão, cyberbullying, partilha não consentida de imagens íntimas.', url: 'https://www.internetsegura.pt', tag: 'Apoio' },
+				{ nome: 'Centro de Internet Segura', desc: 'Recursos educativos para vítimas de cyberbullying e situações de risco online. Inclui guias para pais e jovens.', url: 'https://www.internetsegura.pt', tag: 'Educação' },
+				{ nome: 'SOS Voz Amiga', desc: 'Linha gratuita de apoio emocional. Útil em situações de sextorsão e bullying com forte impacto psicológico. Linha: 213 544 545.', url: 'https://www.sosvozamiga.org', tag: 'Apoio' }
 			]
 		},
 		{
 			titulo: 'Ferramentas gratuitas de proteção',
 			recursos: [
-				{ nome: 'Bitwarden', desc: 'Gestor de palavras-passe gratuito, de código aberto e auditado. Disponível para todos os dispositivos.', url: 'https://bitwarden.com', tag: 'Ferramenta' },
-				{ nome: 'Have I Been Pwned?', desc: 'Verifica se o teu email ou palavra-passe foi exposto em alguma fuga de dados conhecida.', url: 'https://haveibeenpwned.com', tag: 'Verificação' },
-				{ nome: 'VirusTotal', desc: 'Analisa ficheiros e links suspeitos com mais de 70 antivírus. Gratuito e sem instalação.', url: 'https://www.virustotal.com', tag: 'Análise' },
-				{ nome: 'Proton Mail', desc: 'Email gratuito com encriptação de ponta-a-ponta. Baseado na Suíça, com forte política de privacidade.', url: 'https://proton.me', tag: 'Privacidade' }
+				{ nome: 'Bitwarden', desc: 'Gestor de palavras-passe gratuito, open-source e auditado. Funciona em todos os dispositivos.', url: 'https://bitwarden.com', tag: 'Ferramenta' },
+				{ nome: 'KeePassXC', desc: 'Gestor de palavras-passe totalmente offline e gratuito. Para quem prefere não usar a nuvem.', url: 'https://keepassxc.org', tag: 'Ferramenta' },
+				{ nome: 'Have I Been Pwned?', desc: 'Verifica se o seu email ou palavra-passe foi exposto em alguma fuga de dados conhecida.', url: 'https://haveibeenpwned.com', tag: 'Verificação' },
+				{ nome: 'VirusTotal', desc: 'Analisa ficheiros e links suspeitos com mais de 70 antivírus. Gratuito, sem instalação.', url: 'https://www.virustotal.com', tag: 'Análise' },
+				{ nome: 'Proton Mail', desc: 'Email gratuito com encriptação de ponta-a-ponta. Baseado na Suíça, política de privacidade forte.', url: 'https://proton.me', tag: 'Privacidade' },
+				{ nome: 'Signal', desc: 'Aplicação de mensagens com encriptação de ponta-a-ponta. Open-source, sem publicidade.', url: 'https://signal.org', tag: 'Privacidade' },
+				{ nome: 'Authy', desc: 'Aplicação de autenticação em dois passos (2FA). Mais segura que SMS, sincroniza entre dispositivos.', url: 'https://authy.com', tag: 'Ferramenta' },
+				{ nome: 'Mozilla Firefox', desc: 'Browser open-source com foco em privacidade. Bloqueia rastreadores por defeito.', url: 'https://www.mozilla.org/firefox', tag: 'Privacidade' }
 			]
 		},
 		{
 			titulo: 'Verificação de fraudes',
 			recursos: [
-				{ nome: 'PSP — Portal de Denúncia Online', desc: 'Denúncia de crimes online diretamente à PSP, sem sair de casa.', url: 'https://www.psp.pt', tag: 'Denúncia' },
-				{ nome: 'DECO Proteste', desc: 'Associação de defesa do consumidor — apoio em fraudes de compras online e serviços digitais.', url: 'https://www.deco.proteste.pt', tag: 'Consumidor' }
+				{ nome: 'Google Images — Pesquisa Inversa', desc: 'Verifique se uma foto de um perfil de namoro ou anúncio é real ou roubada.', url: 'https://images.google.com', tag: 'Verificação' },
+				{ nome: 'TinEye', desc: 'Pesquisa de imagem inversa alternativa ao Google. Útil para detetar burlas românticas.', url: 'https://tineye.com', tag: 'Verificação' },
+				{ nome: 'URLscan.io', desc: 'Analisa um link suspeito sem o abrir no seu dispositivo. Mostra capturas, redirecionamentos e ameaças.', url: 'https://urlscan.io', tag: 'Análise' },
+				{ nome: 'WHOIS Lookup', desc: 'Descobre quem registou um domínio e quando. Domínios recentes (poucos dias) são frequentemente usados para fraudes.', url: 'https://lookup.icann.org', tag: 'Verificação' }
+			]
+		},
+		{
+			titulo: 'Educação e formação',
+			recursos: [
+				{ nome: 'C-Academy (CNCS)', desc: 'Academia gratuita de cibersegurança em português, com cursos para todos os níveis. Certificada pelo CNCS.', url: 'https://www.cncs.gov.pt/pt/c-academy', tag: 'Educação' },
+				{ nome: 'Portal Aprende.pt', desc: 'Recursos educativos do governo português, incluindo módulos sobre cidadania digital e literacia mediática.', url: 'https://www.aprende.gov.pt', tag: 'Educação' },
+				{ nome: 'Better Internet for Kids', desc: 'Portal europeu de internet segura para crianças. Material multilingue, incluindo português.', url: 'https://www.betterinternetforkids.eu', tag: 'Educação' }
 			]
 		}
 	];
@@ -32,8 +66,8 @@
 	const linhas = [
 		{ numero: '1800 21 22 23', nome: 'Linha Internet Segura', desc: 'Gratuita, 24 horas', cor: '#1DD1A1' },
 		{ numero: '112', nome: 'Emergência', desc: 'Situações de perigo imediato', cor: '#FF6B6B' },
-		{ numero: '116', nome: 'Apoio a Vítimas de Crime', desc: 'Linha de apoio nacional', cor: '#A29BFE' },
-		{ numero: '800 202 156', nome: 'APAV — Apoio à Vítima', desc: 'Gratuita, confidencial', cor: '#0984E3' }
+		{ numero: '116 006', nome: 'APAV — Apoio à Vítima', desc: 'Gratuita, confidencial', cor: '#A29BFE' },
+		{ numero: '213 544 545', nome: 'SOS Voz Amiga', desc: 'Apoio emocional', cor: '#0984E3' }
 	];
 </script>
 
