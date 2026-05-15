@@ -46,11 +46,13 @@
 	];
 
 	const rotasBrutalist = ['/pre-escolar', '/primeiro-ciclo', '/segundo-ciclo', '/terceiro-ciclo', '/secundario'];
+	const rotasEditorial = ['/adultos', '/seniores'];
 
 	const tema = $derived.by(() => {
 		const p = $page.url.pathname;
 		if (rotasBrutalist.some(r => p === r || p.startsWith(r + '/'))) return 'brutalist';
-		return 'editorial';
+		if (rotasEditorial.some(r => p === r || p.startsWith(r + '/'))) return 'editorial';
+		return 'neutro';
 	});
 </script>
 
