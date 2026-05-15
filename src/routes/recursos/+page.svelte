@@ -5,7 +5,7 @@
 			recursos: [
 				{ nome: 'CNCS — Centro Nacional de Cibersegurança', desc: 'Autoridade nacional de cibersegurança. Alertas, relatórios, recursos educativos e apoio a incidentes.', url: 'https://www.cncs.gov.pt', tag: 'Oficial' },
 				{ nome: 'SeguraNet', desc: 'Portal de segurança online para crianças, jovens, pais e professores. Criado pela FCT.', url: 'https://www.seguranet.pt', tag: 'Educação' },
-				{ nome: 'Linha Internet Segura', desc: 'Linha gratuita de apoio a situações de risco online: 1800 21 22 23 (gratuita, 24h).', url: 'https://www.internetcivil.pt', tag: 'Apoio' },
+				{ nome: 'Linha Internet Segura', desc: 'Linha gratuita de apoio a situações de risco online: 800 21 90 90 (gratuita, 24h).', url: 'https://www.seguranet.pt/pt/linha-internet-segura', tag: 'Apoio' },
 				{ nome: 'GNR — Núcleo de Investigação Criminal', desc: 'Para reportar crimes informáticos e cibercrime. Pode fazer queixa na esquadra ou online.', url: 'https://www.gnr.pt', tag: 'Denúncia' },
 				{ nome: 'Polícia Judiciária — Unidade de Cibercrime', desc: 'Para crimes informáticos graves (hacking, fraudes bancárias, predadores online).', url: 'https://www.policiajudiciaria.pt', tag: 'Denúncia' },
 				{ nome: 'CMVM — Comissão do Mercado de Valores Mobiliários', desc: 'Verifica se uma plataforma de investimento tem autorização legal para operar em Portugal.', url: 'https://www.cmvm.pt', tag: 'Finanças' }
@@ -30,7 +30,7 @@
 	];
 
 	const linhas = [
-		{ numero: '1800 21 22 23', nome: 'Linha Internet Segura', desc: 'Gratuita, 24 horas', cor: '#1DD1A1' },
+		{ numero: '800 21 90 90', nome: 'Linha Internet Segura', desc: 'Gratuita, 24 horas', cor: '#1DD1A1' },
 		{ numero: '112', nome: 'Emergência', desc: 'Situações de perigo imediato', cor: '#FF6B6B' },
 		{ numero: '116', nome: 'Apoio a Vítimas de Crime', desc: 'Linha de apoio nacional', cor: '#A29BFE' },
 		{ numero: '800 202 156', nome: 'APAV — Apoio à Vítima', desc: 'Gratuita, confidencial', cor: '#0984E3' }
