@@ -1,3 +1,9 @@
+<script>
+	import VerificadorPassword from '$lib/VerificadorPassword.svelte';
+	import GeradorFrase from '$lib/GeradorFrase.svelte';
+	import SimuladorFraude from '$lib/SimuladorFraude.svelte';
+</script>
+
 <svelte:head>
 	<title>Ferramentas — NavegaSeguro</title>
 </svelte:head>
@@ -11,102 +17,79 @@
 </div>
 
 <main class="container">
+
 	<section>
 		<h2>Avalia a tua segurança</h2>
-		<div class="grelha">
-			<a href="/checklist" class="card">
-				<span class="card-emoji">✅</span>
+		<div class="grelha-links">
+			<a href="/checklist" class="card-link">
+				<span>✅</span>
 				<div>
-					<h3>Checklist de Segurança</h3>
-					<p>10 perguntas para avaliar o teu nível de proteção digital e receberes recomendações personalizadas.</p>
-					<span class="link">Fazer checklist →</span>
+					<strong>Checklist de Segurança</strong>
+					<p>10 perguntas com recomendações personalizadas</p>
 				</div>
+				<span class="seta">→</span>
 			</a>
-			<a href="/quiz-completo" class="card">
-				<span class="card-emoji">🏆</span>
+			<a href="/quiz-completo" class="card-link">
+				<span>🏆</span>
 				<div>
-					<h3>Quiz Completo</h3>
-					<p>35 perguntas por todas as faixas etárias. Obtém o teu certificado NavegaSeguro no final.</p>
-					<span class="link">Fazer quiz →</span>
+					<strong>Quiz Completo</strong>
+					<p>35 perguntas por todas as faixas — com certificado</p>
 				</div>
+				<span class="seta">→</span>
 			</a>
-		</div>
-	</section>
-
-	<section>
-		<h2>Aprende a reconhecer fraudes</h2>
-		<div class="grelha">
-			<a href="/ferramentas" class="card">
-				<span class="card-emoji">🎣</span>
+			<a href="/arquivo" class="card-link">
+				<span>📁</span>
 				<div>
-					<h3>Simulador de Fraudes</h3>
-					<p>SMS, emails e chamadas falsas com hotspots clicáveis — descobre os sinais de alerta em exemplos reais.</p>
-					<span class="link">Experimentar →</span>
+					<strong>Arquivo de Casos Reais</strong>
+					<p>20 burlas documentadas em Portugal, com filtros</p>
 				</div>
+				<span class="seta">→</span>
 			</a>
-			<a href="/arquivo" class="card">
-				<span class="card-emoji">📁</span>
+			<a href="/educadores" class="card-link">
+				<span>🏫</span>
 				<div>
-					<h3>Arquivo de Casos Reais</h3>
-					<p>20 casos documentados em Portugal — filtra por tipo, canal e pesquisa por palavra-chave.</p>
-					<span class="link">Ver arquivo →</span>
+					<strong>Pais e Educadores</strong>
+					<p>6 planos de sessão de 45 minutos prontos a usar</p>
 				</div>
+				<span class="seta">→</span>
 			</a>
-		</div>
-	</section>
-
-	<section>
-		<h2>Palavras-passe</h2>
-		<div class="grelha">
-			<a href="/ferramentas" class="card">
-				<span class="card-emoji">🔐</span>
+			<a href="/imprimir" class="card-link">
+				<span>🖨️</span>
 				<div>
-					<h3>Verificador de Força</h3>
-					<p>Testa a força de uma palavra-passe de exemplo. Calculado localmente — nada vai ao servidor.</p>
-					<span class="link">Verificar →</span>
+					<strong>Cartão Imprimível</strong>
+					<p>Cartão de bolso A5 com sinais de alerta para seniores</p>
 				</div>
+				<span class="seta">→</span>
 			</a>
-			<a href="/ferramentas" class="card">
-				<span class="card-emoji">🔑</span>
+			<a href="/emergencia" class="card-link urgente">
+				<span>🚨</span>
 				<div>
-					<h3>Gerador por Frase</h3>
-					<p>Transforma uma frase memorável numa palavra-passe forte. Aprende a técnica passo a passo.</p>
-					<span class="link">Gerar →</span>
+					<strong>Estou a ser burlado agora</strong>
+					<p>Passos concretos para cada situação de emergência</p>
 				</div>
+				<span class="seta">→</span>
 			</a>
 		</div>
 	</section>
 
 	<section>
-		<h2>Para educadores e famílias</h2>
-		<div class="grelha">
-			<a href="/educadores" class="card">
-				<span class="card-emoji">🏫</span>
-				<div>
-					<h3>Pais e Educadores</h3>
-					<p>6 planos de sessão de 45 minutos, adaptados a cada faixa etária — prontos a usar em sala ou em casa.</p>
-					<span class="link">Ver planos →</span>
-				</div>
-			</a>
-			<a href="/imprimir" class="card">
-				<span class="card-emoji">🖨️</span>
-				<div>
-					<h3>Cartão Imprimível</h3>
-					<p>Cartão de bolso A5 com 6 sinais de alerta e números de apoio — para dar a um familiar sénior.</p>
-					<span class="link">Imprimir →</span>
-				</div>
-			</a>
-		</div>
+		<h2>Simulador de fraudes</h2>
+		<p class="secao-desc">Clica nas partes suspeitas de cada mensagem para perceber o que as torna perigosas.</p>
+		<SimuladorFraude />
 	</section>
 
-	<div class="emergencia-bloco">
-		<span>🚨</span>
-		<div>
-			<strong>Está a ser burlado agora?</strong>
-			<p>Passos concretos para cada situação de emergência — transferência, acesso à conta, ransomware.</p>
-		</div>
-		<a href="/emergencia" class="btn-emergencia">O que fazer →</a>
-	</div>
+	<section>
+		<h2>Verificador de força de palavra-passe</h2>
+		<p class="secao-desc">Testa uma palavra-passe de exemplo — <strong>nunca a tua real.</strong> Calculado localmente, nada é enviado para qualquer servidor.</p>
+		<VerificadorPassword />
+	</section>
+
+	<section>
+		<h2>Gerador de palavra-passe por frase</h2>
+		<p class="secao-desc">Transforma uma frase memorável numa palavra-passe forte. Aprende a técnica passo a passo.</p>
+		<GeradorFrase />
+	</section>
+
 </main>
 
 <style>
@@ -123,11 +106,12 @@
 	.topo p { color: rgba(255,255,255,0.7); font-size: 0.95rem; }
 
 	main { padding: 2.5rem 1.5rem; }
-	section { margin-bottom: 2.5rem; }
+
+	section { margin-bottom: 3rem; }
 
 	h2 {
 		font-family: 'Nunito', sans-serif;
-		font-size: 1.1rem;
+		font-size: 1rem;
 		font-weight: 800;
 		color: #888;
 		text-transform: uppercase;
@@ -135,50 +119,41 @@
 		margin-bottom: 0.75rem;
 	}
 
-	.grelha { display: flex; flex-direction: column; gap: 0.75rem; }
+	.secao-desc {
+		font-size: 0.9rem;
+		color: #555;
+		margin-bottom: 1.25rem;
+		line-height: 1.5;
+	}
 
-	.card {
+	.grelha-links {
 		display: flex;
-		gap: 1rem;
-		align-items: flex-start;
-		background: #fff;
-		border: 1px solid #e5e7eb;
-		border-radius: 0.875rem;
-		padding: 1.25rem;
-		transition: border-color 0.2s, box-shadow 0.2s;
+		flex-direction: column;
+		gap: 0.5rem;
 	}
-	.card:hover {
-		border-color: #0984E3;
-		box-shadow: 0 2px 12px rgba(9,132,227,0.1);
-	}
-	.card-emoji { font-size: 2rem; flex-shrink: 0; line-height: 1; }
-	.card h3 { font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 1rem; color: #1a1a2e; margin-bottom: 0.25rem; }
-	.card p { font-size: 0.875rem; color: #555; line-height: 1.5; margin-bottom: 0.5rem; }
-	.link { font-size: 0.85rem; font-weight: 600; color: #0984E3; }
 
-	.emergencia-bloco {
+	.card-link {
 		display: flex;
 		align-items: center;
-		gap: 1rem;
-		background: #fff0f0;
-		border: 2px solid #FF6B6B;
-		border-radius: 0.875rem;
-		padding: 1.25rem;
-		flex-wrap: wrap;
+		gap: 0.875rem;
+		background: #fff;
+		border: 1px solid #e5e7eb;
+		border-radius: 0.75rem;
+		padding: 0.875rem 1rem;
+		transition: border-color 0.2s, box-shadow 0.15s;
 	}
-	.emergencia-bloco span { font-size: 2rem; flex-shrink: 0; }
-	.emergencia-bloco div { flex: 1; min-width: 200px; }
-	.emergencia-bloco strong { display: block; font-size: 1rem; color: #1a1a2e; margin-bottom: 0.2rem; }
-	.emergencia-bloco p { font-size: 0.875rem; color: #555; }
-	.btn-emergencia {
-		background: #FF6B6B;
-		color: white;
-		font-weight: 700;
-		font-size: 0.9rem;
-		padding: 0.6rem 1.25rem;
-		border-radius: 999px;
-		white-space: nowrap;
-		flex-shrink: 0;
+	.card-link:hover {
+		border-color: #0984E3;
+		box-shadow: 0 2px 8px rgba(9,132,227,0.08);
 	}
-	.btn-emergencia:hover { background: #e55a5a; }
+	.card-link.urgente { border-color: #FFD0D0; }
+	.card-link.urgente:hover { border-color: #FF6B6B; }
+
+	.card-link > span:first-child { font-size: 1.5rem; flex-shrink: 0; }
+	.card-link div { flex: 1; }
+	.card-link strong { display: block; font-size: 0.9rem; color: #1a1a2e; margin-bottom: 0.1rem; }
+	.card-link p { font-size: 0.8rem; color: #666; }
+	.card-link.urgente strong { color: #c0392b; }
+
+	.seta { color: #bbb; font-size: 1rem; flex-shrink: 0; }
 </style>
