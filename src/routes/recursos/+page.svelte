@@ -1,5 +1,7 @@
 <script>
 	import VerificadorPassword from '$lib/VerificadorPassword.svelte';
+	import GeradorFrase from '$lib/GeradorFrase.svelte';
+	import SimuladorFraude from '$lib/SimuladorFraude.svelte';
 
 	const categorias = [
 		{
@@ -85,6 +87,18 @@
 					<h3>🔐 Verificador de força de palavra-passe</h3>
 					<p class="verificador-intro">Testa uma palavra-passe de exemplo — <strong>nunca a tua real.</strong> Calculado localmente, nada é enviado para qualquer servidor.</p>
 					<VerificadorPassword />
+				</div>
+				<div class="verificador-bloco">
+					<h3>🔑 Gerador de palavra-passe por frase</h3>
+					<p class="verificador-intro">Transforma uma frase memorável numa palavra-passe forte — e aprende como funciona a técnica.</p>
+					<GeradorFrase />
+				</div>
+			{/if}
+			{#if cat.titulo === 'Verificação de fraudes'}
+				<div class="verificador-bloco">
+					<h3>🎣 Simulador de fraudes</h3>
+					<p class="verificador-intro">Aprende a identificar SMS, emails e chamadas fraudulentas. Clica nas partes suspeitas para perceber porquê.</p>
+					<SimuladorFraude />
 				</div>
 			{/if}
 		</section>
