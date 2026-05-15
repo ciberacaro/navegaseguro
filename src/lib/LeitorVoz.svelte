@@ -163,6 +163,11 @@
 		transform: translateY(-1px);
 	}
 
+	.btn-leitor:focus-visible {
+		outline: 3px solid #48DBFB;
+		outline-offset: 3px;
+	}
+
 	.btn-leitor.principal {
 		padding: 0.6rem 1.1rem;
 		font-size: 1rem;

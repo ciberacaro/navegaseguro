@@ -262,9 +262,11 @@
 		color: #555;
 	}
 	.btn-r:hover { background: #f0f4ff; }
+	.btn-r:focus-visible { outline: 3px solid #0984E3; outline-offset: 2px; }
 	.btn-r.sim.ativo { background: #e8fff8; border-color: #1DD1A1; color: #0a7c5c; }
 	.btn-r.nao.ativo { background: #fff0f0; border-color: #FF6B6B; color: #c0392b; }
 	.btn-r.naosei.ativo { background: #fff9e6; border-color: #FF9F43; color: #8a5a00; }
+	.btn-ver:focus-visible { outline: 3px solid #48DBFB; outline-offset: 3px; }
 
 	.verificador-secao {
 		margin: 2.5rem 0;

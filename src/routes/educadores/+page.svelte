@@ -207,6 +207,29 @@
 		{/each}
 	</section>
 
+	<section class="ferramentas-educadores">
+		<h2>Ferramentas prontas para a sala</h2>
+		<p class="secao-desc">Dois recursos práticos para usar antes, durante ou depois da sessão.</p>
+		<div class="ferramentas-grid">
+			<a href="/educadores/fichas" class="ferramenta-card">
+				<span aria-hidden="true">📝</span>
+				<div>
+					<strong>Fichas de trabalho</strong>
+					<p>Exercícios imprimíveis por faixa etária — verdadeiro/falso, casos para analisar, pintura. Prontas para A4.</p>
+				</div>
+				<span class="seta" aria-hidden="true">→</span>
+			</a>
+			<a href="/educadores/avaliacao" class="ferramenta-card">
+				<span aria-hidden="true">📊</span>
+				<div>
+					<strong>Avaliação de turma</strong>
+					<p>Modo apresentador para projetar no quadro + folha de respostas imprimível com gabarito para o professor.</p>
+				</div>
+				<span class="seta" aria-hidden="true">→</span>
+			</a>
+		</div>
+	</section>
+
 	<section class="recursos-extra">
 		<h2>Recursos adicionais</h2>
 		<div class="recursos-grid">
@@ -371,6 +394,29 @@
 	}
 	.btn-ver-faixa:hover { opacity: 0.85; }
 
+	.ferramentas-grid {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 0.75rem;
+	}
+	.ferramenta-card {
+		display: flex;
+		align-items: center;
+		gap: 0.875rem;
+		background: #fff;
+		border: 1px solid #e5e7eb;
+		border-radius: 0.75rem;
+		padding: 1rem 1.1rem;
+		transition: border-color 0.15s, box-shadow 0.15s;
+	}
+	.ferramenta-card:hover { border-color: #0984E3; box-shadow: 0 2px 8px rgba(9,132,227,0.08); }
+	.ferramenta-card:focus-visible { outline: 3px solid #0984E3; outline-offset: 2px; }
+	.ferramenta-card > span:first-child { font-size: 1.75rem; flex-shrink: 0; }
+	.ferramenta-card div { flex: 1; }
+	.ferramenta-card strong { display: block; font-size: 0.95rem; color: #1a1a2e; margin-bottom: 0.2rem; }
+	.ferramenta-card p { font-size: 0.82rem; color: #555; line-height: 1.45; margin: 0; }
+	.ferramenta-card .seta { color: #bbb; font-size: 1.1rem; flex-shrink: 0; }
+
 	.recursos-grid {
 		display: grid;
 		grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
@@ -389,5 +435,6 @@
 
 	@media (max-width: 600px) {
 		.meta-info { grid-template-columns: 1fr; }
+		.ferramentas-grid { grid-template-columns: 1fr; }
 	}
 </style>

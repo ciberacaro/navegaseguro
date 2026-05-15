@@ -85,6 +85,19 @@
 		}
 	}
 
+	function teclaHotspot(e, exemploId, hotspotId) {
+		if (e.key === 'Enter' || e.key === ' ') {
+			e.preventDefault();
+			clicarHotspot(exemploId, hotspotId);
+		}
+	}
+
+	function fecharTooltips(e) {
+		if (e.key === 'Escape') {
+			hotspotsMostrados = {};
+		}
+	}
+
 	function totalConcluidos(exemplo) {
 		return exemplo.hotspots.filter(h => hotspotsConcluidos[`${exemplo.id}-${h}`]).length;
 	}
@@ -94,11 +107,13 @@
 	let todosEncontrados = $derived(concluidos === exemploAtual.hotspots.length);
 </script>
 
+<svelte:window onkeydown={fecharTooltips} />
+
 <div class="simulador">
 	<h3>🎯 Simulador de Fraude</h3>
-	<p class="intro">Clique nas partes destacadas para descobrir por que são suspeitas.</p>
+	<p class="intro">Clique nas partes destacadas para descobrir por que são suspeitas. Use <kbd>Tab</kbd> para navegar e <kbd>Esc</kbd> para fechar.</p>
 
-	<div class="tabs" role="tablist">
+	<div class="tabs" role="tablist" aria-label="Exemplos de fraude">
 		{#each exemplos as ex, i}
 			<button
 				role="tab"
@@ -132,7 +147,8 @@
 								onclick={() => clicarHotspot(exemploAtual.id, parte.id)}
 								role="button"
 								tabindex="0"
-								onkeydown={(e) => e.key === 'Enter' && clicarHotspot(exemploAtual.id, parte.id)}
+								onkeydown={(e) => teclaHotspot(e, exemploAtual.id, parte.id)}
+								aria-expanded={hotspotsMostrados[chave] ? 'true' : 'false'}
 								title="Clique para saber mais"
 							>{parte.texto}</span>
 							{#if hotspotsMostrados[chave]}
@@ -162,7 +178,8 @@
 								onclick={() => clicarHotspot(exemploAtual.id, parte.id)}
 								role="button"
 								tabindex="0"
-								onkeydown={(e) => e.key === 'Enter' && clicarHotspot(exemploAtual.id, parte.id)}
+								onkeydown={(e) => teclaHotspot(e, exemploAtual.id, parte.id)}
+								aria-expanded={hotspotsMostrados[chave] ? 'true' : 'false'}
 								title="Clique para saber mais"
 							>{parte.texto}</span>
 							{#if hotspotsMostrados[chave]}
@@ -197,7 +214,8 @@
 									onclick={() => clicarHotspot(exemploAtual.id, parte.id)}
 									role="button"
 									tabindex="0"
-									onkeydown={(e) => e.key === 'Enter' && clicarHotspot(exemploAtual.id, parte.id)}
+									onkeydown={(e) => teclaHotspot(e, exemploAtual.id, parte.id)}
+								aria-expanded={hotspotsMostrados[chave] ? 'true' : 'false'}
 									title="Clique para saber mais"
 								>{parte.texto}</span>
 								{#if hotspotsMostrados[chave]}
@@ -212,14 +230,14 @@
 			</div>
 		{/if}
 
-		<div class="progresso-hotspots">
-			<div class="pontos">
+		<div class="progresso-hotspots" role="status" aria-live="polite" aria-atomic="true">
+			<div class="pontos" aria-hidden="true">
 				{#each exemploAtual.hotspots as h}
 					{@const encontrado = hotspotsConcluidos[`${exemploAtual.id}-${h}`]}
 					<span class="ponto" class:encontrado>{encontrado ? '✓' : '?'}</span>
 				{/each}
 			</div>
-			<span class="progresso-texto">{concluidos}/{exemploAtual.hotspots.length} sinais encontrados</span>
+			<span class="progresso-texto">{concluidos} de {exemploAtual.hotspots.length} sinais encontrados</span>
 		</div>
 
 		{#if todosEncontrados}
@@ -282,6 +300,21 @@
 		background: #0984E3;
 		border-color: #0984E3;
 		color: #fff;
+	}
+	.tabs button:focus-visible {
+		outline: 3px solid #0984E3;
+		outline-offset: 2px;
+	}
+
+	kbd {
+		display: inline-block;
+		background: #f0f4ff;
+		border: 1px solid #c0d0e0;
+		border-radius: 0.25rem;
+		padding: 0.05rem 0.4rem;
+		font-family: 'Inter', monospace;
+		font-size: 0.78rem;
+		color: #1a1a2e;
 	}
 
 	/* SMS */
@@ -452,6 +485,12 @@
 	}
 
 	.hotspot:hover {
+		background: #fde08d;
+	}
+
+	.hotspot:focus-visible {
+		outline: 3px solid #0984E3;
+		outline-offset: 2px;
 		background: #fde08d;
 	}
 

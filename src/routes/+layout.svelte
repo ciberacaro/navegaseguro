@@ -38,7 +38,9 @@
 	const navLinks = [
 		{ href: '/', label: 'Início' },
 		{ href: '/ferramentas', label: 'Ferramentas' },
+		{ href: '/noticias', label: 'Notícias' },
 		{ href: '/recursos', label: 'Recursos' },
+		{ href: '/faq', label: 'FAQ' },
 		{ href: '/glossario', label: 'Glossário' },
 		{ href: '/sobre', label: 'Sobre' },
 	];
@@ -99,7 +101,9 @@
 		<p class="footer-desc">Gratuito · Sem publicidade · Sem recolha de dados · PT-PT</p>
 		<nav aria-label="Navegação de rodapé" class="footer-links">
 			<a href="/ferramentas">Ferramentas</a>
+			<a href="/noticias">Notícias</a>
 			<a href="/recursos">Recursos</a>
+			<a href="/faq">FAQ</a>
 			<a href="/glossario">Glossário</a>
 			<a href="/educadores">Educadores</a>
 			<a href="/contacto">Parcerias</a>
@@ -333,12 +337,14 @@
 		flex-wrap: wrap;
 	}
 
-	.footer-links a { color: #555; font-size: 0.82rem; transition: color 0.2s; }
+	.footer-links a { color: #ccc; font-size: 0.82rem; transition: color 0.2s; }
 	.footer-links a:hover { color: #fff; }
+	.footer-links a:focus-visible { outline: 2px solid #48DBFB; outline-offset: 3px; border-radius: 2px; }
 
-	.footer-note { font-size: 0.78rem; color: #666; }
-	.footer-note a { color: #555; text-decoration: underline; }
+	.footer-note { font-size: 0.78rem; color: #bbb; }
+	.footer-note a { color: #ccc; text-decoration: underline; }
 	.footer-note a:hover { color: #fff; }
+	.footer-note a:focus-visible { outline: 2px solid #48DBFB; outline-offset: 2px; border-radius: 2px; }
 
 	/* ── Responsive ── */
 	@media (max-width: 768px) {

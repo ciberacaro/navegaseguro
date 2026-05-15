@@ -41,7 +41,7 @@
 				<span>📁</span>
 				<div>
 					<strong>Arquivo de Casos Reais</strong>
-					<p>20 burlas documentadas em Portugal, com filtros</p>
+					<p>30 burlas documentadas em Portugal, com filtros</p>
 				</div>
 				<span class="seta">→</span>
 			</a>
@@ -49,7 +49,23 @@
 				<span>🏫</span>
 				<div>
 					<strong>Pais e Educadores</strong>
-					<p>6 planos de sessão de 45 minutos prontos a usar</p>
+					<p>Planos de sessão, fichas e avaliação de turma</p>
+				</div>
+				<span class="seta">→</span>
+			</a>
+			<a href="/noticias" class="card-link">
+				<span>📰</span>
+				<div>
+					<strong>Notícias e alertas</strong>
+					<p>Os alertas mais recentes em Portugal — CNCS, PJ, CMVM</p>
+				</div>
+				<span class="seta">→</span>
+			</a>
+			<a href="/faq" class="card-link">
+				<span>❓</span>
+				<div>
+					<strong>Perguntas frequentes</strong>
+					<p>As 15 dúvidas mais comuns sobre cibersegurança</p>
 				</div>
 				<span class="seta">→</span>
 			</a>

@@ -329,6 +329,167 @@
 			],
 			desfecho: 'A vítima preencheu o formulário completo mas desconfiou antes de pagar. Dados pessoais comprometidos, sem perda financeira direta.',
 			prejuizo: 'Dados pessoais (CC, NIF, morada)'
+		},
+		{
+			id: 21,
+			data: '2024-09',
+			tipo: 'phishing',
+			canal: 'SMS',
+			titulo: 'SMS da Autoridade Tributária a anunciar reembolso de IRS',
+			descricao: 'A vítima recebeu um SMS em nome da AT a informar de um reembolso de IRS de 287€ pendente, com link para "validar IBAN". O site falso pedia credenciais do Portal das Finanças e dados completos do cartão bancário.',
+			sinais: [
+				'A AT nunca contacta por SMS para reembolsos',
+				'Domínio era portaldasfinancas-pt.info, não portaldasfinancas.gov.pt',
+				'Pedido simultâneo de senha do portal e dados do cartão — incompatível',
+				'Valor "atrativo" para baixar a guarda'
+			],
+			desfecho: 'A vítima introduziu os dados. O cartão foi usado para 4 compras online (758€) antes de ser bloqueado.',
+			prejuizo: '758€ + credenciais do Portal das Finanças'
+		},
+		{
+			id: 22,
+			data: '2024-07',
+			tipo: 'mb-way',
+			canal: 'OLX/Marketplace',
+			titulo: 'Falso comprador no OLX pede NIF para "configurar pagamento"',
+			descricao: 'A vítima anunciava uma bicicleta no OLX. Um "comprador" entrou em contacto via WhatsApp dizendo querer pagar por MB WAY, mas pediu o NIF para "configurar a transferência através da plataforma". Em vez de receber, foi-lhe enviado um pedido de pagamento que aceitou por engano.',
+			sinais: [
+				'Comprador insistia em comunicar fora do OLX (WhatsApp)',
+				'Pedido de NIF — MB WAY só precisa do número de telemóvel',
+				'Falava em "plataforma intermediária" inexistente',
+				'Pressão para concluir rapidamente'
+			],
+			desfecho: 'A vítima aprovou o pedido pensando estar a receber. Foram debitados 480€ da sua conta.',
+			prejuizo: '480€'
+		},
+		{
+			id: 23,
+			data: '2024-11',
+			tipo: 'investimento',
+			canal: 'Redes sociais',
+			titulo: 'Anúncio no Instagram com cara de figura pública a promover criptomoeda',
+			descricao: 'A vítima viu um vídeo manipulado no Instagram em que uma figura pública portuguesa supostamente recomendava uma plataforma de investimento em criptomoeda com "rendimentos garantidos de 12% ao mês".',
+			sinais: [
+				'Rendimentos acima de 5% ao ano já são suspeitos; 12% ao mês é fraude',
+				'A figura pública negou publicamente qualquer envolvimento',
+				'Plataforma ausente do registo da CMVM',
+				'Depois do depósito inicial, "consultor" pressionava para depositar mais'
+			],
+			desfecho: 'A vítima depositou 1.500€ iniciais. Quando tentou levantar lucros, foi-lhe exigido pagamento de "taxas" de 600€. Perdeu tudo.',
+			prejuizo: '2.100€'
+		},
+		{
+			id: 24,
+			data: '2025-01',
+			tipo: 'falso-tecnico',
+			canal: 'Browser',
+			titulo: 'Pop-up de "vírus detetado" com número falso da Microsoft',
+			descricao: 'Durante a navegação, abriu-se um pop-up em tela cheia com som de alarme, alegando que o computador estava infetado e dando um número 800 da "Microsoft" para resolver. Era impossível fechar o pop-up sem reiniciar.',
+			sinais: [
+				'A Microsoft nunca mostra pop-ups com números de telefone',
+				'Som de alarme e travamento do browser são técnicas clássicas',
+				'O técnico pediu instalação de AnyDesk',
+				'Pediu pagamento de 199€ por "limpeza"'
+			],
+			desfecho: 'A vítima pagou 199€ por software inútil e o computador ficou com keylogger. Perdeu mais 850€ via homebanking.',
+			prejuizo: '1.049€'
+		},
+		{
+			id: 25,
+			data: '2024-12',
+			tipo: 'burla-familiar',
+			canal: 'WhatsApp',
+			titulo: 'Mensagem do "filho" no WhatsApp a pedir transferência urgente',
+			descricao: 'A vítima recebeu mensagem no WhatsApp de número desconhecido: "Mãe, parti o telemóvel e estou neste número novo. Preciso urgente que pagues esta fatura, depois explico." Anexava um IBAN.',
+			sinais: [
+				'Número desconhecido a fingir ser familiar',
+				'Justificação plausível para a mudança de número',
+				'Urgência e impossibilidade de falar por chamada',
+				'IBAN de pessoa singular, não de empresa de utilities'
+			],
+			desfecho: 'A vítima transferiu 720€. Só ao ligar à filha real à noite percebeu a fraude. O dinheiro nunca foi recuperado.',
+			prejuizo: '720€'
+		},
+		{
+			id: 26,
+			data: '2024-06',
+			tipo: 'phishing',
+			canal: 'Email',
+			titulo: 'Email do "Departamento de Recursos Humanos" sobre folha de salário',
+			descricao: 'Funcionário de empresa média recebeu email aparentemente do RH a pedir confirmação de dados bancários para "atualização do sistema de pagamentos". O email vinha de domínio externo parecido com o da empresa.',
+			sinais: [
+				'Domínio empresa-pt.com em vez de empresa.pt',
+				'Pedido de IBAN por email — o RH já tem essa informação',
+				'Tom impessoal, sem identificação do remetente',
+				'Link levava a formulário externo, não a sistema interno'
+			],
+			desfecho: 'A vítima respondeu com o IBAN. O atacante usou os dados para tentativa de fraude por SEPA, detetada pelo banco a tempo.',
+			prejuizo: 'Tentativa frustrada (dados expostos)'
+		},
+		{
+			id: 27,
+			data: '2025-02',
+			tipo: 'phishing',
+			canal: 'Redes sociais',
+			titulo: 'Conta falsa de banco no Instagram a "ajudar" clientes',
+			descricao: 'A vítima publicou uma reclamação na página oficial do banco no Instagram. Em poucos minutos foi contactada por DM por conta com nome e logótipo idênticos ao do banco, oferecendo ajuda — mas era falsa.',
+			sinais: [
+				'Conta tinha "_apoio" ou "_pt" no nome',
+				'Sem o "verificado" azul oficial',
+				'Pediu credenciais e código SMS para "validar identidade"',
+				'Criada há poucas semanas, poucos seguidores'
+			],
+			desfecho: 'A vítima forneceu o código SMS recebido. Foram transferidos 2.400€ da conta antes de bloquear acesso.',
+			prejuizo: '2.400€'
+		},
+		{
+			id: 28,
+			data: '2024-10',
+			tipo: 'phishing',
+			canal: 'SMS',
+			titulo: 'Falso aviso de violação de Wi-Fi público em centro comercial',
+			descricao: 'Após ligar-se ao Wi-Fi gratuito de um centro comercial, a vítima recebeu SMS a alegar "violação de segurança" e a pedir-lhe que "validasse identidade" num link para receber código de acesso.',
+			sinais: [
+				'Wi-Fi público nunca pede validação por SMS após ligação',
+				'Domínio do link não correspondia ao do centro comercial',
+				'Formulário pedia número de telemóvel + código SMS',
+				'Coincidência temporal demasiado precisa para ser legítima'
+			],
+			desfecho: 'A vítima introduziu o código SMS que era na verdade um SMS de confirmação de pagamento MB WAY. Foram debitados 150€.',
+			prejuizo: '150€'
+		},
+		{
+			id: 29,
+			data: '2025-03',
+			tipo: 'burla-romantica',
+			canal: 'App de namoro',
+			titulo: 'Burla romântica com criptomoeda ("pig butchering")',
+			descricao: 'Mulher contactada no Tinder por homem aparentemente próspero. Após 2 meses de conversas afetuosas, este "ensina-a" a investir em criptomoeda numa plataforma onde os lucros "crescem rapidamente" — tudo simulado.',
+			sinais: [
+				'Conversa migra rapidamente para WhatsApp',
+				'Promessa de retornos rápidos e generosos',
+				'Plataforma de cripto desconhecida e não regulada',
+				'Pressão para depositar mais quando tenta levantar',
+				'Quando recusa depositar, pede "taxas de saída"'
+			],
+			desfecho: 'A vítima depositou 8.300€ ao longo de 4 meses. Quando tentou levantar, foi exigido novo depósito de 4.000€ em "impostos". Aí percebeu a fraude.',
+			prejuizo: '8.300€'
+		},
+		{
+			id: 30,
+			data: '2025-04',
+			tipo: 'falso-tecnico',
+			canal: 'Telefone',
+			titulo: 'Falso técnico da operadora a "atualizar router"',
+			descricao: 'A vítima recebeu chamada de alguém alegando ser da MEO/NOS/Vodafone, a dizer que ia atualizar remotamente o router e precisava do código que apareceria no autocolante. Esse código era na verdade a chave Wi-Fi da rede pessoal.',
+			sinais: [
+				'Operadora nunca pede código do router por telefone',
+				'Chamada não solicitada de "técnico"',
+				'Urgência: "se não fizer agora, perde a ligação durante a noite"',
+				'Insistência em obter o código antes de qualquer outra ação'
+			],
+			desfecho: 'A vítima forneceu o código. O atacante usou-o para aceder remotamente ao router e à rede doméstica. Não houve perda financeira imediata mas comprometimento total da rede.',
+			prejuizo: 'Acesso completo à rede doméstica'
 		}
 	];
 
@@ -358,11 +519,14 @@
 		'Telefone': '📞',
 		'WhatsApp': '💬',
 		'Redes sociais': '🌐',
-		'Site falso': '🖥️'
+		'Site falso': '🖥️',
+		'OLX/Marketplace': '🛒',
+		'Browser': '🖥️',
+		'App de namoro': '❤️'
 	};
 
 	const todosTipos = Object.keys(tipoLabels);
-	const todosCanais = ['SMS', 'Email', 'Telefone', 'WhatsApp', 'Redes sociais', 'Site falso'];
+	const todosCanais = ['SMS', 'Email', 'Telefone', 'WhatsApp', 'Redes sociais', 'Site falso', 'OLX/Marketplace', 'Browser', 'App de namoro'];
 
 	let filtroTipo = $state('');
 	let filtroCanal = $state('');
