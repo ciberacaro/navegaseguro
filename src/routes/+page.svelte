@@ -1,17 +1,17 @@
 <script>
 	import { alerta } from '$lib/alerta.js';
 
-	const nivelCor = { alto: '#FF6B6B', medio: '#FF9F43', baixo: '#1DD1A1' };
+	const nivelCor = { alto: '#c0392b', medio: '#b87900', baixo: '#1a5e3e' };
 	const nivelLabel = { alto: 'Alerta alto', medio: 'Alerta médio', baixo: 'Informação' };
 
 	const grupos = [
-		{ href: '/pre-escolar',    emoji: '🧸', titulo: 'Pré-Escolar',   idades: '3 – 5 anos',             desc: 'Primeiros passos seguros online',                          cor: '#FF9F43', fundo: '#FFF5E6' },
-		{ href: '/primeiro-ciclo', emoji: '🎨', titulo: '1.º Ciclo',     idades: '6 – 10 anos',             desc: 'Passwords, estranhos online e regras básicas',             cor: '#48DBFB', fundo: '#E8FAFF' },
-		{ href: '/segundo-ciclo',  emoji: '📱', titulo: '2.º Ciclo',     idades: '10 – 12 anos',            desc: 'Redes sociais, privacidade e primeiro telemóvel',           cor: '#1DD1A1', fundo: '#E8FFF8' },
-		{ href: '/terceiro-ciclo', emoji: '⚡', titulo: '3.º Ciclo',     idades: '12 – 15 anos',            desc: 'Reputação digital, cyberbullying e relações online',        cor: '#FF6B6B', fundo: '#FFF0F0' },
-		{ href: '/secundario',     emoji: '🎯', titulo: 'Secundário',    idades: '15 – 18 anos',            desc: 'Deepfakes, pegada digital e fraudes financeiras',           cor: '#A29BFE', fundo: '#F3F0FF' },
-		{ href: '/adultos',        emoji: '👔', titulo: 'Adultos',       idades: '18 – 59 anos',            desc: 'Phishing bancário, trabalho remoto e proteção da família', cor: '#0984E3', fundo: '#EBF5FF' },
-		{ href: '/seniores',       emoji: '🌟', titulo: 'Seniores',      idades: '60+ anos',                desc: 'Burlas telefónicas, suporte falso e compras seguras',       cor: '#6C5CE7', fundo: '#F0EEFF' }
+		{ href: '/pre-escolar',    emoji: '🧸', titulo: 'Pré-Escolar',   idades: '3 – 5',  desc: 'Primeiros passos seguros online' },
+		{ href: '/primeiro-ciclo', emoji: '🎨', titulo: '1.º Ciclo',     idades: '6 – 10',  desc: 'Passwords, estranhos online e regras básicas' },
+		{ href: '/segundo-ciclo',  emoji: '📱', titulo: '2.º Ciclo',     idades: '10 – 12', desc: 'Redes sociais, privacidade e primeiro telemóvel' },
+		{ href: '/terceiro-ciclo', emoji: '⚡', titulo: '3.º Ciclo',     idades: '12 – 15', desc: 'Reputação digital, cyberbullying e relações online' },
+		{ href: '/secundario',     emoji: '🎯', titulo: 'Secundário',    idades: '15 – 18', desc: 'Deepfakes, pegada digital e fraudes financeiras' },
+		{ href: '/adultos',        emoji: '👔', titulo: 'Adultos',       idades: '18 – 59', desc: 'Phishing bancário, trabalho remoto e proteção da família' },
+		{ href: '/seniores',       emoji: '🌟', titulo: 'Seniores',      idades: '60+',    desc: 'Burlas telefónicas, suporte falso e compras seguras' }
 	];
 </script>
 
@@ -19,252 +19,382 @@
 	<title>NavegaSeguro — Cibersegurança para todos</title>
 </svelte:head>
 
-<main>
+<main class="home">
 	<section class="hero">
 		<div class="hero-inner">
-			<span class="badge">🇵🇹 Gratuito · Sem publicidade · Em português</span>
-			<h1>Navega na internet<br /><span class="destaque">com segurança</span></h1>
-			<p class="subtitulo">Conteúdo de cibersegurança adaptado à tua faixa etária — para crianças, jovens, adultos e seniores.</p>
-			<div class="hero-btns">
-				<a href="#escolhe" class="btn-principal">Escolhe a tua faixa etária ↓</a>
-				<a href="/ferramentas" class="btn-secundario">Ver ferramentas →</a>
+			<span class="overline">EDIÇÃO PERMANENTE · GRATUITO · EM PT-PT</span>
+			<h1>
+				Cibersegurança <em>para</em><br />
+				todas as idades.
+			</h1>
+			<p class="standfirst">
+				Um recurso português para crianças, jovens, adultos e seniores — adaptado a cada faixa etária, sem publicidade nem recolha de dados.
+			</p>
+			<div class="meta-hero">
+				<span>30 casos documentados</span>
+				<span>·</span>
+				<span>7 faixas etárias</span>
+				<span>·</span>
+				<span>PT-PT</span>
+			</div>
+			<div class="hero-ctas">
+				<a href="#faixas" class="btn-primario">Escolher faixa etária</a>
+				<a href="/ferramentas" class="btn-link">Ver ferramentas →</a>
 			</div>
 		</div>
 	</section>
 
-	<section class="alerta-semana" aria-label="Alerta da semana">
-		<div class="container">
-			<div class="alerta-card" style="--cor: {nivelCor[alerta.nivel]}">
-				<div class="alerta-topo">
-					<span class="alerta-badge" style="background: {nivelCor[alerta.nivel]}">{nivelLabel[alerta.nivel]}</span>
-					<span class="alerta-data">{alerta.data}</span>
-				</div>
-				<h2>⚠️ {alerta.titulo}</h2>
-				<p>{alerta.descricao}</p>
-				<details class="alerta-mais">
-					<summary>Ver detalhes</summary>
-					<div class="alerta-detalhe">
-						<div>
-							<strong>Como reconhecer:</strong>
-							<ul>{#each alerta.como_reconhecer as sinal}<li>{sinal}</li>{/each}</ul>
-						</div>
-						<div>
-							<strong>O que fazer:</strong>
-							<p>{alerta.o_que_fazer}</p>
-						</div>
+	<section class="destaque">
+		<div class="rule"><span>ALERTA DESTA SEMANA</span></div>
+		<article class="manchete">
+			<span class="kicker" style="--n: {nivelCor[alerta.nivel]}">{nivelLabel[alerta.nivel]}</span>
+			<span class="data">{alerta.data}</span>
+			<h2>{alerta.titulo}</h2>
+			<p class="lead">{alerta.descricao}</p>
+			<details class="manchete-mais">
+				<summary>Ver análise completa</summary>
+				<div class="mais-grid">
+					<div>
+						<strong>Como reconhecer</strong>
+						<ul>{#each alerta.como_reconhecer as sinal}<li>{sinal}</li>{/each}</ul>
 					</div>
-				</details>
-				<div class="alerta-tags">
-					{#each alerta.tags as tag}<span class="tag">{tag}</span>{/each}
+					<div>
+						<strong>O que fazer</strong>
+						<p>{alerta.o_que_fazer}</p>
+					</div>
 				</div>
+			</details>
+			<div class="manchete-tags">
+				{#each alerta.tags as tag}<span>#{tag}</span>{/each}
 			</div>
-		</div>
+		</article>
 	</section>
 
-	<section class="grupos" id="escolhe">
-		<div class="container">
-			<h2>Para quem é o NavegaSeguro?</h2>
-			<p class="secao-desc">Escolhe o teu grupo para acederes ao conteúdo adaptado.</p>
-			<div class="grelha">
-				{#each grupos as g}
-					<a href={g.href} class="cartao" style="--cor: {g.cor}; --fundo: {g.fundo}">
-						<span class="cartao-emoji" aria-hidden="true">{g.emoji}</span>
-						<h3>{g.titulo}</h3>
-						<span class="idades">{g.idades}</span>
-						<p>{g.desc}</p>
-						<span class="seta" aria-hidden="true">Explorar →</span>
+	<section class="faixas" id="faixas">
+		<div class="rule"><span>POR FAIXA ETÁRIA</span></div>
+		<ol class="faixas-lista">
+			{#each grupos as g, i}
+				<li>
+					<a href={g.href} class="faixa-link">
+						<span class="faixa-numero">{String(i + 1).padStart(2, '0')}</span>
+						<div class="faixa-meio">
+							<h3>{g.titulo}</h3>
+							<p>{g.desc}</p>
+						</div>
+						<span class="faixa-idades">{g.idades}<br /><span>anos</span></span>
 					</a>
-				{/each}
-			</div>
+				</li>
+			{/each}
+		</ol>
+	</section>
+
+	<section class="secoes">
+		<div class="rule"><span>SECÇÕES</span></div>
+		<div class="secoes-grid">
+			<a href="/ferramentas" class="secao">
+				<span class="secao-num">→ 01</span>
+				<h4>Ferramentas</h4>
+				<p>Simulador, verificador de palavras-passe, gerador por frase.</p>
+			</a>
+			<a href="/noticias" class="secao">
+				<span class="secao-num">→ 02</span>
+				<h4>Notícias</h4>
+				<p>Alertas curados das entidades oficiais.</p>
+			</a>
+			<a href="/arquivo" class="secao">
+				<span class="secao-num">→ 03</span>
+				<h4>Arquivo</h4>
+				<p>30 casos reais documentados em Portugal.</p>
+			</a>
+			<a href="/faq" class="secao">
+				<span class="secao-num">→ 04</span>
+				<h4>Perguntas frequentes</h4>
+				<p>15 dúvidas comuns sobre cibersegurança.</p>
+			</a>
+			<a href="/educadores" class="secao">
+				<span class="secao-num">→ 05</span>
+				<h4>Educadores</h4>
+				<p>Planos de sessão, fichas e avaliação de turma.</p>
+			</a>
+			<a href="/glossario" class="secao">
+				<span class="secao-num">→ 06</span>
+				<h4>Glossário</h4>
+				<p>Termos técnicos em linguagem simples.</p>
+			</a>
 		</div>
 	</section>
 
-	<section class="emergencia-strip">
-		<div class="container">
-			<span>🚨 <strong>Está a ser burlado agora?</strong></span>
-			<a href="/emergencia" class="btn-emergencia">O que fazer →</a>
-			<a href="tel:800219090" class="btn-tel">📞 800 21 90 90</a>
-		</div>
-	</section>
+	<aside class="emergencia">
+		<p>
+			<strong>Está a ser burlado agora?</strong>
+			<a href="/emergencia">Veja o que fazer →</a>
+			· ou ligue
+			<a href="tel:800219090">800 21 90 90</a>
+		</p>
+	</aside>
 </main>
 
 <style>
-	main { min-height: 100vh; }
-
-	/* ── Hero ── */
-	.hero {
-		background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
-		color: white;
-		padding: 5rem 2rem 6rem;
-		text-align: center;
-	}
-	.hero-inner {
-		max-width: 680px;
+	.home {
+		max-width: 1100px;
 		margin: 0 auto;
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		gap: 1.25rem;
+		padding: 0 1.5rem;
 	}
-	.badge {
-		background: rgba(255,255,255,0.12);
-		border: 1px solid rgba(255,255,255,0.2);
-		padding: 0.35rem 1rem;
-		border-radius: 999px;
-		font-size: 0.82rem;
-	}
-	h1 {
-		font-family: 'Nunito', sans-serif;
-		font-size: clamp(2rem, 5vw, 3.5rem);
-		font-weight: 900;
-		line-height: 1.15;
-	}
-	.destaque { color: #48DBFB; }
-	.subtitulo {
-		font-size: 1.05rem;
-		color: rgba(255,255,255,0.8);
-		max-width: 500px;
-	}
-	.hero-btns { display: flex; gap: 0.75rem; flex-wrap: wrap; justify-content: center; }
-	.btn-principal {
-		background: #48DBFB;
-		color: #1a1a2e;
-		font-weight: 700;
-		padding: 0.85rem 1.75rem;
-		border-radius: 999px;
-		font-size: 0.95rem;
-		transition: transform 0.2s, box-shadow 0.2s;
-	}
-	.btn-principal:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(72,219,251,0.35); }
-	.btn-secundario {
-		background: rgba(255,255,255,0.1);
-		color: white;
-		border: 1px solid rgba(255,255,255,0.3);
-		font-weight: 600;
-		padding: 0.85rem 1.75rem;
-		border-radius: 999px;
-		font-size: 0.95rem;
-		transition: background 0.2s;
-	}
-	.btn-secundario:hover { background: rgba(255,255,255,0.18); }
 
-	/* ── Alerta ── */
-	.alerta-semana {
-		background: #fff;
-		padding: 2rem 1.5rem;
-		border-bottom: 1px solid #f0f0f0;
+	/* HERO */
+	.hero {
+		padding: 4rem 0 3rem;
+		border-bottom: 2px solid #1a1a1a;
 	}
-	.container { max-width: 1000px; margin: 0 auto; padding: 0 1.5rem; }
-	.alerta-card {
-		border: 2px solid var(--cor);
-		border-radius: 1rem;
-		padding: 1.25rem 1.5rem;
-		background: #fffaf5;
+	.hero-inner { max-width: 760px; }
+
+	.overline {
+		font-size: 0.78rem;
+		font-weight: 700;
+		letter-spacing: 0.2em;
+		text-transform: uppercase;
+		color: #c0392b;
+		margin-bottom: 1.5rem;
+		display: block;
 	}
-	.alerta-topo { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.5rem; }
-	.alerta-badge {
-		color: white;
+
+	.hero h1 {
+		font-family: 'Playfair Display', Georgia, serif;
+		font-weight: 900;
+		font-size: clamp(2.5rem, 7vw, 5.5rem);
+		line-height: 0.95;
+		letter-spacing: -0.025em;
+		margin-bottom: 1.25rem;
+		color: #1a1a1a;
+	}
+	.hero h1 em { font-style: italic; color: #c0392b; font-weight: 400; }
+
+	.standfirst {
+		font-family: 'Playfair Display', Georgia, serif;
+		font-size: clamp(1.1rem, 2.2vw, 1.4rem);
+		line-height: 1.45;
+		color: #333;
+		margin-bottom: 1.25rem;
+		font-style: italic;
+		max-width: 660px;
+	}
+
+	.meta-hero {
+		display: flex;
+		gap: 0.6rem;
+		font-size: 0.82rem;
+		color: #555;
+		flex-wrap: wrap;
+		margin-bottom: 2rem;
+		letter-spacing: 0.02em;
+	}
+
+	.hero-ctas { display: flex; align-items: center; gap: 1.5rem; flex-wrap: wrap; }
+	.btn-primario {
+		display: inline-block;
+		background: #1a1a1a;
+		color: #fdfcf8;
+		font-size: 0.85rem;
+		font-weight: 700;
+		text-transform: uppercase;
+		letter-spacing: 0.1em;
+		padding: 0.95rem 1.5rem;
+		transition: background 0.15s;
+	}
+	.btn-primario:hover { background: #c0392b; }
+	.btn-primario:focus-visible { outline: 3px solid #c0392b; outline-offset: 3px; }
+
+	.btn-link {
+		font-weight: 700;
+		font-size: 0.85rem;
+		text-transform: uppercase;
+		letter-spacing: 0.1em;
+		color: #c0392b;
+		border-bottom: 1px solid #c0392b;
+		padding-bottom: 3px;
+	}
+	.btn-link:focus-visible { outline: 3px solid #c0392b; outline-offset: 4px; }
+
+	/* RULE */
+	.rule { display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem; }
+	.rule::after { content: ''; flex: 1; height: 1px; background: #1a1a1a; }
+	.rule span {
+		font-size: 0.78rem;
+		font-weight: 700;
+		letter-spacing: 0.2em;
+		text-transform: uppercase;
+		color: #1a1a1a;
+	}
+
+	section { padding: 4rem 0; }
+
+	/* MANCHETE */
+	.manchete { max-width: 800px; }
+	.kicker {
+		display: inline-block;
+		background: var(--n);
+		color: #fdfcf8;
 		font-size: 0.72rem;
 		font-weight: 700;
-		padding: 0.2rem 0.65rem;
-		border-radius: 999px;
+		padding: 0.25rem 0.7rem;
+		letter-spacing: 0.1em;
 		text-transform: uppercase;
-		letter-spacing: 0.05em;
+		margin-right: 0.75rem;
+		margin-bottom: 0.5rem;
 	}
-	.alerta-data { font-size: 0.8rem; color: #555; }
-	.alerta-card h2 {
-		font-family: 'Nunito', sans-serif;
-		font-weight: 800;
-		font-size: 1.1rem;
-		color: #1a1a2e;
-		margin-bottom: 0.4rem;
+	.data { font-size: 0.82rem; color: #555; }
+	.manchete h2 {
+		font-family: 'Playfair Display', Georgia, serif;
+		font-weight: 900;
+		font-size: clamp(1.75rem, 4vw, 2.75rem);
+		line-height: 1.1;
+		letter-spacing: -0.015em;
+		margin: 0.5rem 0 0.75rem;
+		color: #1a1a1a;
 	}
-	.alerta-card > p { font-size: 0.9rem; color: #444; }
-	.alerta-mais { margin-top: 0.75rem; }
-	.alerta-mais summary {
+	.lead { font-size: 1.05rem; line-height: 1.65; color: #333; margin-bottom: 1rem; }
+
+	.manchete-mais { margin: 1rem 0 1.25rem; }
+	.manchete-mais summary {
 		font-size: 0.85rem;
-		font-weight: 600;
-		color: #0984E3;
+		font-weight: 700;
+		text-transform: uppercase;
+		letter-spacing: 0.08em;
+		color: #c0392b;
 		cursor: pointer;
+		border-bottom: 1px solid #c0392b;
+		padding-bottom: 2px;
+		display: inline-block;
 		list-style: none;
 	}
-	.alerta-mais summary::-webkit-details-marker { display: none; }
-	.alerta-detalhe {
+	.manchete-mais summary::-webkit-details-marker { display: none; }
+	.manchete-mais summary:focus-visible { outline: 3px solid #c0392b; outline-offset: 3px; }
+	.mais-grid {
 		display: grid;
 		grid-template-columns: 1fr 1fr;
-		gap: 1rem;
-		margin-top: 0.75rem;
+		gap: 2rem;
+		margin-top: 1.25rem;
+		padding-top: 1.25rem;
+		border-top: 1px solid #ddd;
 	}
-	.alerta-detalhe strong { display: block; font-size: 0.8rem; color: #555; text-transform: uppercase; letter-spacing: 0.04em; margin-bottom: 0.3rem; }
-	.alerta-detalhe ul { padding-left: 1.2rem; font-size: 0.875rem; color: #333; line-height: 1.6; }
-	.alerta-detalhe p { font-size: 0.875rem; color: #333; line-height: 1.6; }
-	.alerta-tags { display: flex; gap: 0.4rem; flex-wrap: wrap; margin-top: 0.75rem; }
-	.tag { background: #f0f4ff; color: #555; font-size: 0.72rem; padding: 0.15rem 0.55rem; border-radius: 999px; }
+	.mais-grid strong {
+		display: block;
+		font-size: 0.78rem;
+		font-weight: 700;
+		text-transform: uppercase;
+		letter-spacing: 0.08em;
+		color: #555;
+		margin-bottom: 0.5rem;
+	}
+	.mais-grid ul { padding-left: 1.2rem; }
+	.mais-grid li, .mais-grid p { font-size: 0.92rem; color: #333; line-height: 1.6; }
 
-	/* ── Faixas ── */
-	.grupos { padding: 4rem 1.5rem; }
-	.grupos h2 {
-		font-family: 'Nunito', sans-serif;
-		font-size: 1.7rem;
-		font-weight: 800;
-		text-align: center;
+	.manchete-tags { display: flex; gap: 0.8rem; flex-wrap: wrap; }
+	.manchete-tags span { font-size: 0.78rem; color: #555; font-family: 'Inter', sans-serif; }
+
+	/* FAIXAS */
+	.faixas-lista { list-style: none; padding: 0; }
+	.faixa-link {
+		display: grid;
+		grid-template-columns: 80px 1fr auto;
+		gap: 2rem;
+		align-items: center;
+		padding: 1.5rem 0;
+		border-top: 1px solid #1a1a1a;
+		color: inherit;
+		transition: padding 0.2s, color 0.2s;
+	}
+	.faixa-link:hover { padding-left: 1rem; color: #c0392b; }
+	.faixa-link:focus-visible { outline: 3px solid #c0392b; outline-offset: 2px; }
+	.faixas-lista li:last-child .faixa-link { border-bottom: 1px solid #1a1a1a; }
+	.faixa-numero {
+		font-family: 'Playfair Display', Georgia, serif;
+		font-size: 2.5rem;
+		font-weight: 900;
+		color: #c0392b;
+		font-style: italic;
+		line-height: 1;
+	}
+	.faixa-meio h3 {
+		font-family: 'Playfair Display', Georgia, serif;
+		font-weight: 900;
+		font-size: 1.75rem;
+		line-height: 1.1;
+		margin-bottom: 0.3rem;
+	}
+	.faixa-meio p { font-size: 0.95rem; color: #555; line-height: 1.5; max-width: 480px; }
+	.faixa-link:hover .faixa-meio p { color: #333; }
+	.faixa-idades {
+		font-family: 'Playfair Display', Georgia, serif;
+		font-size: 2rem;
+		font-weight: 900;
+		text-align: right;
+		line-height: 1;
+		color: #1a1a1a;
+	}
+	.faixa-idades span {
+		font-family: 'Inter', sans-serif;
+		font-size: 0.7rem;
+		font-weight: 400;
+		color: #555;
+		letter-spacing: 0.1em;
+		text-transform: uppercase;
+	}
+
+	/* SECÇÕES */
+	.secoes-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+		gap: 0;
+	}
+	.secao {
+		padding: 1.5rem;
+		border: 1px solid #1a1a1a;
+		margin-left: -1px;
+		margin-top: -1px;
+		display: block;
+		color: inherit;
+		transition: background 0.15s, color 0.15s;
+	}
+	.secao:hover { background: #1a1a1a; color: #fdfcf8; }
+	.secao:hover .secao-num { color: #fdfcf8; }
+	.secao:focus-visible { outline: 3px solid #c0392b; outline-offset: -3px; }
+	.secao-num {
+		font-size: 0.78rem;
+		font-weight: 700;
+		letter-spacing: 0.1em;
+		color: #c0392b;
+		display: block;
+		margin-bottom: 0.5rem;
+		transition: color 0.15s;
+	}
+	.secao h4 {
+		font-family: 'Playfair Display', Georgia, serif;
+		font-weight: 900;
+		font-size: 1.25rem;
 		margin-bottom: 0.4rem;
 	}
-	.secao-desc { text-align: center; color: #666; margin-bottom: 2rem; font-size: 0.95rem; }
-	.grelha { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 1rem; }
-	.cartao {
-		background: var(--fundo);
-		border: 2px solid transparent;
-		border-radius: 1rem;
+	.secao p { font-size: 0.9rem; line-height: 1.5; opacity: 0.8; }
+
+	/* EMERGÊNCIA */
+	.emergencia {
+		background: #1a1a1a;
+		color: #fdfcf8;
 		padding: 1.5rem;
-		display: flex;
-		flex-direction: column;
-		gap: 0.4rem;
-		transition: transform 0.2s, border-color 0.2s, box-shadow 0.2s;
+		text-align: center;
+		margin: 2rem -1.5rem 4rem;
 	}
-	.cartao:hover { transform: translateY(-3px); border-color: var(--cor); box-shadow: 0 6px 20px rgba(0,0,0,0.08); }
-	.cartao-emoji { font-size: 2.25rem; }
-	.cartao h3 { font-family: 'Nunito', sans-serif; font-size: 1.1rem; font-weight: 800; color: var(--cor); }
-	.idades { font-size: 0.75rem; font-weight: 600; color: #555; text-transform: uppercase; letter-spacing: 0.05em; }
-	.cartao p { font-size: 0.875rem; color: #444; flex: 1; }
-	.seta { font-size: 0.82rem; font-weight: 600; color: var(--cor); margin-top: 0.25rem; }
+	.emergencia p { font-size: 1rem; max-width: 900px; margin: 0 auto; line-height: 1.6; }
+	.emergencia strong { font-family: 'Playfair Display', Georgia, serif; font-size: 1.1rem; margin-right: 0.5rem; }
+	.emergencia a { color: #fdfcf8; text-decoration: underline; font-weight: 700; }
+	.emergencia a:hover { color: #FF6B6B; }
+	.emergencia a:focus-visible { outline: 2px solid #fdfcf8; outline-offset: 3px; }
 
-	/* ── Faixa de emergência ── */
-	.emergencia-strip {
-		background: #1a1a2e;
-		padding: 1.25rem 1.5rem;
-	}
-	.emergencia-strip .container {
-		display: flex;
-		align-items: center;
-		gap: 1rem;
-		flex-wrap: wrap;
-		justify-content: center;
-	}
-	.emergencia-strip span { color: #ccc; font-size: 0.95rem; }
-	.emergencia-strip strong { color: #fff; }
-	.btn-emergencia {
-		background: #FF6B6B;
-		color: white;
-		font-weight: 700;
-		font-size: 0.875rem;
-		padding: 0.5rem 1.1rem;
-		border-radius: 999px;
-		transition: background 0.2s;
-	}
-	.btn-emergencia:hover { background: #e55a5a; }
-	.btn-tel {
-		background: #1DD1A1;
-		color: #1a1a2e;
-		font-weight: 700;
-		font-size: 0.875rem;
-		padding: 0.5rem 1.1rem;
-		border-radius: 999px;
-		transition: background 0.2s;
-	}
-	.btn-tel:hover { background: #17b98d; }
-
-	@media (max-width: 600px) {
-		.alerta-detalhe { grid-template-columns: 1fr; }
+	@media (max-width: 700px) {
+		.faixa-link { grid-template-columns: 50px 1fr; gap: 1rem; }
+		.faixa-idades { display: none; }
+		.faixa-numero { font-size: 1.75rem; }
+		.faixa-meio h3 { font-size: 1.35rem; }
+		.mais-grid { grid-template-columns: 1fr; }
 	}
 </style>

@@ -16,14 +16,14 @@
 	 *   historias?: Array<{titulo: string, narrativa: string, licao: string}>
 	 * }}
 	 */
-	let { emoji, titulo, subtitulo, cor, fundo, introducao, temas, perguntas, dicas, variante = 'adulto', historias = [] } = $props();
+	let { emoji, titulo, subtitulo, cor, fundo, introducao, temas, perguntas, dicas, variante = 'adulto', historias = [], tema = 'brutalist' } = $props();
 </script>
 
 <svelte:head>
 	<title>{titulo} — NavegaSeguro</title>
 </svelte:head>
 
-<div class="pagina variante-{variante}" style="--cor: {cor}; --fundo: {fundo}">
+<div class="pagina variante-{variante} tema-{tema}" style="--cor: {cor}; --fundo: {fundo}">
 	<div class="topo">
 		<div class="container">
 			<a href="/" class="voltar">← Início</a>
@@ -401,4 +401,351 @@
 	.variante-senior .licao { font-size: 1.1rem; padding: 1rem 1.25rem; }
 
 	.variante-senior .voltar { font-size: 1rem; }
+
+	/* ════════════════════════════════════════════════════════════
+	   TEMA BRUTALIST — pré-escolar, 1.º, 2.º, 3.º ciclo, secundário
+	   ════════════════════════════════════════════════════════════ */
+	.tema-brutalist {
+		background: #FFF8E7;
+	}
+	.tema-brutalist .topo {
+		background: var(--cor);
+		border-bottom: 4px solid #000;
+		padding: 3rem 1.5rem 4rem;
+		position: relative;
+		overflow: hidden;
+	}
+	.tema-brutalist .topo::before {
+		content: '';
+		position: absolute;
+		top: 15%;
+		right: 8%;
+		width: 60px;
+		height: 60px;
+		background: #FFE066;
+		border: 3px solid #000;
+		box-shadow: 5px 5px 0 #000;
+		transform: rotate(15deg);
+		pointer-events: none;
+	}
+	.tema-brutalist .topo::after {
+		content: '';
+		position: absolute;
+		bottom: 20%;
+		left: 5%;
+		width: 35px;
+		height: 35px;
+		background: #000;
+		border-radius: 50%;
+		pointer-events: none;
+	}
+	.tema-brutalist .voltar {
+		display: inline-block;
+		background: #000;
+		color: #FFE066;
+		padding: 0.4rem 0.9rem;
+		font-weight: 800;
+		font-size: 0.82rem;
+		text-transform: uppercase;
+		letter-spacing: 0.05em;
+		border: 2px solid #000;
+		box-shadow: 4px 4px 0 #FFE066;
+	}
+	.tema-brutalist .voltar:hover { transform: translate(2px, 2px); box-shadow: 2px 2px 0 #FFE066; }
+	.tema-brutalist .emoji-grande {
+		display: inline-block;
+		background: #fff;
+		border: 4px solid #000;
+		box-shadow: 8px 8px 0 #000;
+		padding: 0.5rem 1.25rem;
+		margin: 1.25rem 0;
+		font-size: 3.5rem !important;
+		transform: rotate(-2deg);
+	}
+	.tema-brutalist .topo h1 {
+		font-family: 'Nunito', sans-serif;
+		font-weight: 900;
+		font-size: clamp(2.5rem, 7vw, 4.5rem) !important;
+		line-height: 0.95;
+		letter-spacing: -0.03em;
+		color: #000;
+		text-transform: uppercase;
+		text-shadow: 4px 4px 0 #FFE066;
+	}
+	.tema-brutalist .subtitulo {
+		font-size: 1.1rem !important;
+		font-weight: 600;
+		color: #000;
+		background: #fff;
+		display: inline-block;
+		padding: 0.4rem 1rem;
+		border: 3px solid #000;
+		margin-top: 0.75rem;
+	}
+
+	.tema-brutalist main { padding: 3rem 1.5rem 4rem; }
+
+	.tema-brutalist .intro {
+		background: #FFE066 !important;
+		border: 3px solid #000 !important;
+		border-radius: 0 !important;
+		box-shadow: 8px 8px 0 #000;
+		padding: 1.5rem !important;
+		font-size: 1.05rem !important;
+		font-weight: 500;
+		color: #000 !important;
+	}
+
+	.tema-brutalist h2 {
+		font-family: 'Nunito', sans-serif !important;
+		font-weight: 900 !important;
+		text-transform: uppercase;
+		letter-spacing: -0.01em;
+		color: #000 !important;
+		font-size: 1.75rem !important;
+		display: inline-block;
+		background: #fff;
+		padding: 0.25rem 0.85rem;
+		border: 3px solid #000;
+		box-shadow: 5px 5px 0 var(--cor);
+		text-align: left !important;
+		border-bottom: 3px solid #000 !important;
+	}
+
+	.tema-brutalist .tema-card {
+		background: #fff !important;
+		border: 3px solid #000 !important;
+		border-radius: 0 !important;
+		box-shadow: 6px 6px 0 var(--cor);
+		transition: transform 0.1s, box-shadow 0.1s;
+		text-align: left !important;
+	}
+	.tema-brutalist .tema-card:hover { transform: translate(2px, 2px); box-shadow: 4px 4px 0 var(--cor); }
+	.tema-brutalist .tema-card h3 {
+		font-family: 'Nunito', sans-serif;
+		font-weight: 900;
+		text-transform: uppercase;
+		color: #000 !important;
+		font-size: 1.05rem !important;
+	}
+	.tema-brutalist .tema-card p { color: #000 !important; font-weight: 500; }
+	.tema-brutalist .tema-icone {
+		display: inline-block;
+		background: var(--cor);
+		padding: 0.3rem 0.6rem;
+		border: 2px solid #000;
+		font-size: 1.75rem !important;
+	}
+
+	.tema-brutalist .historias { margin-top: 4rem; }
+	.tema-brutalist .historia-card {
+		background: #fff !important;
+		border: 3px solid #000 !important;
+		border-left-width: 3px !important;
+		border-radius: 0 !important;
+		box-shadow: 6px 6px 0 var(--cor);
+		padding: 1.5rem !important;
+	}
+	.tema-brutalist .historia-card h3 {
+		font-family: 'Nunito', sans-serif;
+		font-weight: 900;
+		text-transform: uppercase;
+		color: #000 !important;
+	}
+	.tema-brutalist .historia-card .narrativa { color: #000; }
+	.tema-brutalist .licao {
+		background: #FFE066 !important;
+		border: 2px solid #000;
+		border-radius: 0 !important;
+	}
+	.tema-brutalist .licao strong { color: #000 !important; }
+
+	.tema-brutalist .dicas li {
+		background: #fff !important;
+		border: 3px solid #000 !important;
+		border-left-width: 6px !important;
+		border-left-color: var(--cor) !important;
+		border-radius: 0 !important;
+		box-shadow: 5px 5px 0 #000;
+		font-weight: 500;
+		color: #000;
+	}
+	.tema-brutalist .dicas li::before {
+		background: var(--cor);
+		color: #000;
+		font-weight: 900;
+		padding: 0 0.4rem;
+		left: 0.5rem !important;
+		border: 2px solid #000;
+	}
+
+	.tema-brutalist .quiz-secao { margin-top: 4rem; }
+	.tema-brutalist .quiz-desc { color: #000; font-weight: 500; }
+
+	/* ════════════════════════════════════════════════════════════
+	   TEMA EDITORIAL — adultos, séniores
+	   ════════════════════════════════════════════════════════════ */
+	.tema-editorial {
+		background: #fdfcf8;
+	}
+	.tema-editorial .topo {
+		background: #fdfcf8 !important;
+		border-bottom: 2px solid #1a1a1a !important;
+		padding: 4rem 1.5rem 3.5rem !important;
+		text-align: left !important;
+	}
+	.tema-editorial .topo .container {
+		max-width: 1000px;
+	}
+	.tema-editorial .voltar {
+		font-size: 0.78rem !important;
+		font-weight: 700;
+		text-transform: uppercase;
+		letter-spacing: 0.1em;
+		color: #c0392b !important;
+		border-bottom: 1px solid #c0392b;
+		padding-bottom: 2px;
+		margin-bottom: 2rem !important;
+	}
+	.tema-editorial .emoji-grande {
+		font-size: 2.5rem !important;
+		display: block;
+		opacity: 0.5;
+		margin-bottom: 0.5rem !important;
+	}
+	.tema-editorial .topo h1 {
+		font-family: 'Playfair Display', Georgia, serif !important;
+		font-weight: 900;
+		font-size: clamp(2.5rem, 6vw, 4.5rem) !important;
+		line-height: 0.95;
+		letter-spacing: -0.025em;
+		color: #1a1a1a !important;
+	}
+	.tema-editorial .subtitulo {
+		font-family: 'Playfair Display', Georgia, serif !important;
+		font-style: italic;
+		font-size: 1.25rem !important;
+		color: #333 !important;
+		max-width: 700px;
+		line-height: 1.4;
+		margin-top: 1rem;
+	}
+
+	.tema-editorial main { padding: 3rem 1.5rem 5rem; }
+	.tema-editorial main.container { max-width: 1000px; }
+
+	.tema-editorial .intro {
+		background: transparent !important;
+		border-left: 3px solid #c0392b;
+		border-radius: 0 !important;
+		padding: 0.25rem 0 0.25rem 1.5rem !important;
+		font-family: 'Playfair Display', Georgia, serif;
+		font-size: 1.2rem !important;
+		font-style: italic;
+		line-height: 1.55 !important;
+		color: #1a1a1a !important;
+		max-width: 760px;
+	}
+
+	.tema-editorial section { margin-bottom: 4rem; }
+
+	.tema-editorial h2 {
+		font-family: 'Playfair Display', Georgia, serif !important;
+		font-weight: 900 !important;
+		font-size: 1.85rem !important;
+		color: #1a1a1a !important;
+		padding-bottom: 0.5rem;
+		border-bottom: 1px solid #1a1a1a;
+		margin-bottom: 1.5rem !important;
+		display: block !important;
+		text-align: left !important;
+	}
+
+	.tema-editorial .grelha-temas { gap: 0; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); }
+	.tema-editorial .tema-card {
+		background: transparent !important;
+		border: 1px solid #1a1a1a !important;
+		border-radius: 0 !important;
+		margin-left: -1px;
+		margin-top: -1px;
+		padding: 1.5rem !important;
+		text-align: left !important;
+	}
+	.tema-editorial .tema-card h3 {
+		font-family: 'Playfair Display', Georgia, serif !important;
+		font-weight: 900;
+		font-size: 1.25rem !important;
+		color: #1a1a1a !important;
+	}
+	.tema-editorial .tema-card p { color: #333 !important; font-size: 0.95rem; }
+	.tema-editorial .tema-icone {
+		font-size: 1.5rem !important;
+		display: inline-block;
+		margin-bottom: 0.5rem;
+	}
+
+	.tema-editorial .hist-desc {
+		font-family: 'Playfair Display', Georgia, serif;
+		font-style: italic;
+		color: #555 !important;
+	}
+	.tema-editorial .historia-card {
+		background: transparent !important;
+		border: none !important;
+		border-left: 3px solid #c0392b !important;
+		border-radius: 0 !important;
+		padding: 0 0 1rem 1.5rem !important;
+		margin-bottom: 1.5rem !important;
+	}
+	.tema-editorial .historia-card h3 {
+		font-family: 'Playfair Display', Georgia, serif !important;
+		font-weight: 900;
+		font-size: 1.35rem !important;
+		color: #1a1a1a !important;
+	}
+	.tema-editorial .narrativa { color: #1a1a1a !important; font-size: 1rem; line-height: 1.65 !important; }
+	.tema-editorial .licao {
+		background: transparent !important;
+		border-top: 1px solid #1a1a1a;
+		border-radius: 0 !important;
+		padding: 0.85rem 0 0 0 !important;
+		margin-top: 0.75rem;
+		font-style: italic;
+	}
+	.tema-editorial .licao strong {
+		display: block;
+		font-style: normal;
+		font-size: 0.78rem !important;
+		text-transform: uppercase;
+		letter-spacing: 0.08em;
+		color: #555 !important;
+		margin-bottom: 0.25rem;
+	}
+
+	.tema-editorial .dicas { gap: 0; }
+	.tema-editorial .dicas li {
+		background: transparent !important;
+		border: none !important;
+		border-top: 1px solid #1a1a1a !important;
+		border-radius: 0 !important;
+		padding: 1rem 1rem 1rem 3rem !important;
+		font-family: 'Inter', sans-serif;
+		font-size: 1rem;
+		color: #1a1a1a;
+	}
+	.tema-editorial .dicas li:last-child { border-bottom: 1px solid #1a1a1a !important; }
+	.tema-editorial .dicas li::before {
+		color: #c0392b;
+		font-family: 'Playfair Display', Georgia, serif;
+		font-style: italic;
+		font-size: 1.25rem;
+		left: 0.75rem !important;
+	}
+
+	.tema-editorial .quiz-desc {
+		font-family: 'Playfair Display', Georgia, serif;
+		font-style: italic;
+		font-size: 1.05rem !important;
+		color: #555 !important;
+	}
 </style>

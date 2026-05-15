@@ -143,4 +143,4 @@
 	};
 </script>
 
-<PaginaFaixa {...dados} />
+<PaginaFaixa {...dados} tema="editorial" />
