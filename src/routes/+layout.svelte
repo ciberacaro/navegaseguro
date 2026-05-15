@@ -14,6 +14,9 @@
 <nav>
 	<a href="/" class="logo">🛡️ NavegaSeguro</a>
 	<div class="nav-links">
+		<a href="/checklist">Checklist</a>
+		<a href="/quiz-completo">Quiz</a>
+		<a href="/educadores">Educadores</a>
 		<a href="/glossario">Glossário</a>
 		<a href="/recursos">Recursos</a>
 		<a href="/sobre">Sobre</a>
@@ -27,11 +30,15 @@
 		<p class="footer-logo">🛡️ NavegaSeguro</p>
 		<p>Conteúdo gratuito e sem fins lucrativos, em língua portuguesa.</p>
 		<div class="footer-links">
-			<a href="/sobre">Sobre o projeto</a>
-			<a href="/recursos">Recursos oficiais</a>
+			<a href="/checklist">Checklist</a>
+			<a href="/quiz-completo">Quiz</a>
+			<a href="/educadores">Educadores</a>
+			<a href="/contacto">Parcerias</a>
+			<a href="/sobre">Sobre</a>
+			<a href="/recursos">Recursos</a>
 			<a href="/glossario">Glossário</a>
 		</div>
-		<p class="footer-note">Parceria com CNCS · SeguraNet · GNR · Linha Internet Segura 1800 21 22 23</p>
+		<p class="footer-note">Parceria com CNCS · SeguraNet · GNR · Linha Internet Segura 800 21 90 90</p>
 	</div>
 </footer>
 

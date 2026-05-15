@@ -1,0 +1,40 @@
+{
+  "name": "NavegaSeguro",
+  "short_name": "NavegaSeguro",
+  "description": "Plataforma de sensibilização para cibersegurança adaptada a cada faixa etária",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f8faff",
+  "theme_color": "#1a1a2e",
+  "lang": "pt",
+  "icons": [
+    {
+      "src": "/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "screenshots": [],
+  "categories": ["education", "security"],
+  "shortcuts": [
+    {
+      "name": "Checklist de Segurança",
+      "short_name": "Checklist",
+      "url": "/checklist",
+      "description": "Avalia o teu nível de proteção digital"
+    },
+    {
+      "name": "Quiz Completo",
+      "short_name": "Quiz",
+      "url": "/quiz-completo",
+      "description": "Quiz de cibersegurança para todas as idades"
+    }
+  ]
+}

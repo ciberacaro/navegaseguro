@@ -1,4 +1,16 @@
 <script>
+	import { alerta } from '$lib/alerta.js';
+
+	const nivelCor = { alto: '#FF6B6B', medio: '#FF9F43', baixo: '#1DD1A1' };
+	const nivelLabel = { alto: 'Alerta alto', medio: 'Alerta médio', baixo: 'Informação' };
+
+	const ferramentas = [
+		{ href: '/quiz-completo', emoji: '🏆', titulo: 'Quiz Completo', desc: 'Percorre todas as faixas etárias e obtém o teu certificado NavegaSeguro.' },
+		{ href: '/checklist', emoji: '✅', titulo: 'Checklist de Segurança', desc: 'Avalia a tua segurança digital em 10 perguntas e recebe recomendações.' },
+		{ href: '/educadores', emoji: '🏫', titulo: 'Pais e Educadores', desc: 'Planos de sessão de 45min e guias para usar em casa ou em sala de aula.' },
+		{ href: '/contacto', emoji: '🤝', titulo: 'Parcerias', desc: 'Câmaras, escolas e IPSS — saiba como integrar o NavegaSeguro.' }
+	];
+
 	const grupos = [
 		{
 			href: '/pre-escolar',
@@ -84,6 +96,54 @@
 			<h1>Navega na internet<br /><span class="destaque">com segurança</span></h1>
 			<p class="subtitulo">Aprende a proteger-te online — com conteúdo feito para a tua idade, em português, gratuito e sem publicidade.</p>
 			<a href="#escolhe" class="btn-principal">Escolhe a tua faixa etária ↓</a>
+		</div>
+	</section>
+
+	<section class="alerta-semana">
+		<div class="container">
+			<div class="alerta-card" style="--cor: {nivelCor[alerta.nivel]}">
+				<div class="alerta-topo">
+					<span class="alerta-badge" style="background: {nivelCor[alerta.nivel]}">{nivelLabel[alerta.nivel]}</span>
+					<span class="alerta-data">{alerta.data}</span>
+				</div>
+				<h3>⚠️ {alerta.titulo}</h3>
+				<p>{alerta.descricao}</p>
+				<div class="alerta-detalhe">
+					<div>
+						<strong>Como reconhecer:</strong>
+						<ul>
+							{#each alerta.como_reconhecer as sinal}
+								<li>{sinal}</li>
+							{/each}
+						</ul>
+					</div>
+					<div class="alerta-acao">
+						<strong>O que fazer:</strong>
+						<p>{alerta.o_que_fazer}</p>
+					</div>
+				</div>
+				<div class="alerta-tags">
+					{#each alerta.tags as tag}
+						<span class="tag">{tag}</span>
+					{/each}
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="ferramentas-secao">
+		<div class="container">
+			<h2>Ferramentas</h2>
+			<p class="secao-desc">Quizzes, checklists e recursos para educadores — tudo gratuito.</p>
+			<div class="grelha-ferramentas">
+				{#each ferramentas as f}
+					<a href={f.href} class="ferramenta-card">
+						<span class="ferramenta-emoji">{f.emoji}</span>
+						<h3>{f.titulo}</h3>
+						<p>{f.desc}</p>
+					</a>
+				{/each}
+			</div>
 		</div>
 	</section>
 
@@ -320,6 +380,146 @@
 		font-weight: 600;
 		color: var(--cor);
 		margin-top: 0.5rem;
+	}
+
+	.alerta-semana {
+		background: #fff;
+		padding: 2.5rem 1.5rem;
+		border-bottom: 1px solid #f0f0f0;
+	}
+
+	.alerta-card {
+		border: 2px solid var(--cor);
+		border-radius: 1rem;
+		padding: 1.5rem;
+		background: #fffaf0;
+	}
+
+	.alerta-topo {
+		display: flex;
+		align-items: center;
+		gap: 1rem;
+		margin-bottom: 0.75rem;
+	}
+
+	.alerta-badge {
+		color: white;
+		font-size: 0.75rem;
+		font-weight: 700;
+		padding: 0.25rem 0.75rem;
+		border-radius: 999px;
+		text-transform: uppercase;
+		letter-spacing: 0.05em;
+	}
+
+	.alerta-data {
+		font-size: 0.8rem;
+		color: #888;
+	}
+
+	.alerta-card h3 {
+		font-family: 'Nunito', sans-serif;
+		font-weight: 800;
+		font-size: 1.15rem;
+		color: #1a1a2e;
+		margin-bottom: 0.5rem;
+	}
+
+	.alerta-card > p {
+		color: #444;
+		margin-bottom: 1rem;
+	}
+
+	.alerta-detalhe {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 1rem;
+		margin-bottom: 1rem;
+	}
+
+	.alerta-detalhe strong {
+		display: block;
+		font-size: 0.85rem;
+		color: #666;
+		text-transform: uppercase;
+		letter-spacing: 0.04em;
+		margin-bottom: 0.4rem;
+	}
+
+	.alerta-detalhe ul {
+		padding-left: 1.25rem;
+		font-size: 0.875rem;
+		color: #333;
+		line-height: 1.6;
+	}
+
+	.alerta-acao p {
+		font-size: 0.875rem;
+		color: #333;
+		line-height: 1.6;
+	}
+
+	.alerta-tags {
+		display: flex;
+		gap: 0.5rem;
+		flex-wrap: wrap;
+	}
+
+	.tag {
+		background: #f0f4ff;
+		color: #555;
+		font-size: 0.75rem;
+		padding: 0.2rem 0.6rem;
+		border-radius: 999px;
+	}
+
+	.ferramentas-secao {
+		padding: 3rem 1.5rem;
+		background: #f8faff;
+	}
+
+	.grelha-ferramentas {
+		display: grid;
+		grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+		gap: 1rem;
+		margin-top: 1.5rem;
+	}
+
+	.ferramenta-card {
+		background: #fff;
+		border: 2px solid #e0e7ff;
+		border-radius: 0.75rem;
+		padding: 1.5rem;
+		display: flex;
+		flex-direction: column;
+		gap: 0.4rem;
+		transition: border-color 0.2s, transform 0.2s;
+	}
+
+	.ferramenta-card:hover {
+		border-color: #0984E3;
+		transform: translateY(-2px);
+	}
+
+	.ferramenta-emoji { font-size: 2rem; }
+
+	.ferramenta-card h3 {
+		font-family: 'Nunito', sans-serif;
+		font-weight: 800;
+		font-size: 1rem;
+		color: #1a1a2e;
+	}
+
+	.ferramenta-card p {
+		font-size: 0.85rem;
+		color: #555;
+		line-height: 1.4;
+	}
+
+	@media (max-width: 600px) {
+		.alerta-detalhe {
+			grid-template-columns: 1fr;
+		}
 	}
 
 	.pilares {
