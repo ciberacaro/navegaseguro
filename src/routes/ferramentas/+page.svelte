@@ -113,7 +113,7 @@
 		font-family: 'Nunito', sans-serif;
 		font-size: 1rem;
 		font-weight: 800;
-		color: #888;
+		color: #555;
 		text-transform: uppercase;
 		letter-spacing: 0.06em;
 		margin-bottom: 0.75rem;

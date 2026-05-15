@@ -114,7 +114,7 @@
 		font-family: 'Nunito', sans-serif;
 		font-size: 1rem;
 		font-weight: 800;
-		color: #888;
+		color: #555;
 		text-transform: uppercase;
 		letter-spacing: 0.06em;
 		margin-bottom: 0.75rem;
@@ -136,7 +136,7 @@
 	}
 	.linha-card strong { font-family: 'Nunito', sans-serif; font-size: 1.2rem; font-weight: 900; color: var(--cor); }
 	.linha-nome { font-weight: 600; font-size: 0.85rem; color: #1a1a2e; }
-	.linha-desc { font-size: 0.75rem; color: #888; }
+	.linha-desc { font-size: 0.75rem; color: #555; }
 
 	/* ── CTA ferramentas ── */
 	.ferramentas-cta {

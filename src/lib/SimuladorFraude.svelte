@@ -327,7 +327,7 @@
 
 	.sms-info span {
 		font-size: 0.75rem;
-		color: #888;
+		color: #555;
 	}
 
 	.sms-balao {
@@ -365,7 +365,7 @@
 	}
 
 	.email-label {
-		color: #888;
+		color: #555;
 		margin-right: 0.25rem;
 	}
 
@@ -425,7 +425,7 @@
 		font-size: 0.75rem;
 		text-transform: uppercase;
 		letter-spacing: 0.08em;
-		color: #888;
+		color: #555;
 		margin-bottom: 0.6rem;
 	}
 
@@ -514,7 +514,7 @@
 
 	.progresso-texto {
 		font-size: 0.8rem;
-		color: #888;
+		color: #555;
 	}
 
 	.sucesso {
@@ -531,7 +531,7 @@
 	.legenda {
 		margin-top: 1rem;
 		font-size: 0.78rem;
-		color: #888;
+		color: #555;
 	}
 
 	.hotspot-demo {

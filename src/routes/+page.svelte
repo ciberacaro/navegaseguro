@@ -171,7 +171,7 @@
 		text-transform: uppercase;
 		letter-spacing: 0.05em;
 	}
-	.alerta-data { font-size: 0.8rem; color: #999; }
+	.alerta-data { font-size: 0.8rem; color: #555; }
 	.alerta-card h2 {
 		font-family: 'Nunito', sans-serif;
 		font-weight: 800;
@@ -195,7 +195,7 @@
 		gap: 1rem;
 		margin-top: 0.75rem;
 	}
-	.alerta-detalhe strong { display: block; font-size: 0.8rem; color: #888; text-transform: uppercase; letter-spacing: 0.04em; margin-bottom: 0.3rem; }
+	.alerta-detalhe strong { display: block; font-size: 0.8rem; color: #555; text-transform: uppercase; letter-spacing: 0.04em; margin-bottom: 0.3rem; }
 	.alerta-detalhe ul { padding-left: 1.2rem; font-size: 0.875rem; color: #333; line-height: 1.6; }
 	.alerta-detalhe p { font-size: 0.875rem; color: #333; line-height: 1.6; }
 	.alerta-tags { display: flex; gap: 0.4rem; flex-wrap: wrap; margin-top: 0.75rem; }
@@ -225,7 +225,7 @@
 	.cartao:hover { transform: translateY(-3px); border-color: var(--cor); box-shadow: 0 6px 20px rgba(0,0,0,0.08); }
 	.cartao-emoji { font-size: 2.25rem; }
 	.cartao h3 { font-family: 'Nunito', sans-serif; font-size: 1.1rem; font-weight: 800; color: var(--cor); }
-	.idades { font-size: 0.75rem; font-weight: 600; color: #999; text-transform: uppercase; letter-spacing: 0.05em; }
+	.idades { font-size: 0.75rem; font-weight: 600; color: #555; text-transform: uppercase; letter-spacing: 0.05em; }
 	.cartao p { font-size: 0.875rem; color: #444; flex: 1; }
 	.seta { font-size: 0.82rem; font-weight: 600; color: var(--cor); margin-top: 0.25rem; }
 

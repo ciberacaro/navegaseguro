@@ -300,8 +300,8 @@
 	.sessao-emoji { font-size: 1.5rem; }
 	.sessao-info { text-align: left; flex: 1; }
 	.sessao-info strong { display: block; font-size: 0.95rem; color: #1a1a2e; }
-	.sessao-info span { font-size: 0.8rem; color: #888; }
-	.sessao-chevron { color: #999; font-size: 0.8rem; }
+	.sessao-info span { font-size: 0.8rem; color: #555; }
+	.sessao-chevron { color: #555; font-size: 0.8rem; }
 
 	.sessao-corpo {
 		padding: 1.5rem;
@@ -318,7 +318,7 @@
 		padding: 1rem;
 		border-radius: 0.5rem;
 	}
-	.meta-info strong { display: block; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.04em; color: #888; margin-bottom: 0.3rem; }
+	.meta-info strong { display: block; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.04em; color: #555; margin-bottom: 0.3rem; }
 	.meta-info p, .meta-info ul { font-size: 0.875rem; color: #333; margin: 0; }
 	.meta-info ul { padding-left: 1.1rem; }
 

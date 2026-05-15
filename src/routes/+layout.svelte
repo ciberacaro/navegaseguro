@@ -120,7 +120,59 @@
 	:global(:focus-visible) { outline: 3px solid #0984E3; outline-offset: 3px; border-radius: 3px; }
 	:global([data-letra='grande']) { font-size: 112%; }
 	:global([data-letra='muitogrande']) { font-size: 125%; }
-	:global(.alto-contraste) { filter: contrast(1.5) saturate(0.8); }
+
+	/* ── Alto contraste WCAG (preto sobre branco, sem cores decorativas) ── */
+	:global(.alto-contraste),
+	:global(.alto-contraste body) {
+		background: #fff !important;
+		color: #000 !important;
+	}
+	:global(.alto-contraste *) {
+		background-image: none !important;
+		text-shadow: none !important;
+		box-shadow: none !important;
+	}
+	:global(.alto-contraste *:not(button):not(.btn-emergencia-nav):not(.menu-emergencia):not(.btn-emergencia):not(.btn-tel):not(.btn-principal):not(.btn-secundario):not(.alerta-badge):not(.recurso-tag):not(.tag):not(.cat-badge):not(.linha-card):not(input):not(textarea)) {
+		color: #000 !important;
+		background-color: transparent !important;
+	}
+	:global(.alto-contraste a) {
+		color: #0000EE !important;
+		text-decoration: underline !important;
+	}
+	:global(.alto-contraste a:visited) {
+		color: #551A8B !important;
+	}
+	:global(.alto-contraste button),
+	:global(.alto-contraste .btn-principal),
+	:global(.alto-contraste .btn-secundario),
+	:global(.alto-contraste .btn-emergencia),
+	:global(.alto-contraste .btn-tel),
+	:global(.alto-contraste .btn-emergencia-nav) {
+		background: #000 !important;
+		color: #fff !important;
+		border: 2px solid #000 !important;
+	}
+	:global(.alto-contraste header),
+	:global(.alto-contraste footer),
+	:global(.alto-contraste .topo),
+	:global(.alto-contraste .hero),
+	:global(.alto-contraste .emergencia-strip) {
+		background: #fff !important;
+		color: #000 !important;
+		border-bottom: 2px solid #000 !important;
+	}
+	:global(.alto-contraste footer),
+	:global(.alto-contraste footer *) {
+		color: #000 !important;
+	}
+	:global(.alto-contraste *) {
+		border-color: #000 !important;
+	}
+	:global(.alto-contraste img),
+	:global(.alto-contraste svg) {
+		filter: contrast(1.2);
+	}
 
 	/* ── Skip link ── */
 	.saltar-conteudo {
@@ -281,11 +333,11 @@
 		flex-wrap: wrap;
 	}
 
-	.footer-links a { color: #888; font-size: 0.82rem; transition: color 0.2s; }
+	.footer-links a { color: #555; font-size: 0.82rem; transition: color 0.2s; }
 	.footer-links a:hover { color: #fff; }
 
 	.footer-note { font-size: 0.78rem; color: #666; }
-	.footer-note a { color: #888; text-decoration: underline; }
+	.footer-note a { color: #555; text-decoration: underline; }
 	.footer-note a:hover { color: #fff; }
 
 	/* ── Responsive ── */

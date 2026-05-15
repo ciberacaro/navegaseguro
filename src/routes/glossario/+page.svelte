@@ -160,7 +160,7 @@
 	}
 
 	.total {
-		color: #888;
+		color: #555;
 		font-size: 0.85rem;
 		margin-bottom: 1.5rem;
 	}

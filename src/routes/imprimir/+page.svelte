@@ -461,7 +461,7 @@
 	.verso-rodape {
 		text-align: center;
 		font-size: 0.68rem;
-		color: #888;
+		color: #555;
 		font-style: italic;
 		margin-top: 0.25rem;
 	}

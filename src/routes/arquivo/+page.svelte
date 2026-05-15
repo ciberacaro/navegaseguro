@@ -728,7 +728,7 @@
 
 	.stat-label {
 		font-size: 0.75rem;
-		color: #888;
+		color: #555;
 		text-align: center;
 		text-transform: uppercase;
 		letter-spacing: 0.04em;
@@ -885,7 +885,7 @@
 
 	.resultados-info {
 		font-size: 0.85rem;
-		color: #888;
+		color: #555;
 		margin-bottom: 1.25rem;
 		font-weight: 500;
 	}
@@ -1083,7 +1083,7 @@
 	.sem-resultados {
 		text-align: center;
 		padding: 4rem 2rem;
-		color: #888;
+		color: #555;
 	}
 	.sem-resultados-emoji { font-size: 2.5rem; margin-bottom: 0.75rem; }
 	.sem-resultados-titulo { font-size: 1.1rem; font-weight: 700; color: #444; margin-bottom: 0.4rem; }

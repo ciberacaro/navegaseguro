@@ -220,7 +220,7 @@
 	}
 	.prog-barra { flex: 1; height: 8px; background: #eee; border-radius: 999px; overflow: hidden; }
 	.prog-fill { height: 100%; background: #0984E3; border-radius: 999px; transition: width 0.3s; }
-	.progresso-linha span { font-size: 0.8rem; color: #888; white-space: nowrap; }
+	.progresso-linha span { font-size: 0.8rem; color: #555; white-space: nowrap; }
 
 	.perguntas { display: flex; flex-direction: column; gap: 1rem; margin-bottom: 2rem; }
 
@@ -320,7 +320,7 @@
 		justify-content: space-between;
 		margin-bottom: 0.5rem;
 	}
-	.rec-estado { font-size: 0.8rem; font-weight: 600; color: #888; }
+	.rec-estado { font-size: 0.8rem; font-weight: 600; color: #555; }
 	.rec-pergunta { font-size: 0.95rem; font-weight: 600; color: #1a1a2e; margin-bottom: 0.75rem; }
 
 	.rec-acao { background: #f8faff; border-radius: 0.5rem; padding: 0.75rem 1rem; }

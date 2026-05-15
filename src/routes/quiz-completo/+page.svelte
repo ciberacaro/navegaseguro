@@ -333,7 +333,7 @@
 		font-size: 0.9rem;
 	}
 
-	.preview-n { margin-left: auto; color: #888; font-size: 0.8rem; }
+	.preview-n { margin-left: auto; color: #555; font-size: 0.8rem; }
 
 	.quiz-wrap {
 		background: #fff;
@@ -351,7 +351,7 @@
 
 	.prog-barra { flex: 1; height: 8px; background: #eee; border-radius: 999px; overflow: hidden; }
 	.prog-fill { height: 100%; border-radius: 999px; transition: width 0.4s ease, background 0.3s; }
-	.progresso-global span { font-size: 0.8rem; color: #888; white-space: nowrap; }
+	.progresso-global span { font-size: 0.8rem; color: #555; white-space: nowrap; }
 
 	.faixa-label {
 		display: inline-block;
@@ -453,7 +453,7 @@
 		font-size: 0.85rem;
 		text-transform: uppercase;
 		letter-spacing: 0.15em;
-		color: #888;
+		color: #555;
 		margin-bottom: 1rem;
 	}
 
@@ -469,7 +469,7 @@
 
 	.cert-texto { color: #444; line-height: 1.6; margin-bottom: 1rem; max-width: 450px; margin-inline: auto; }
 	.cert-score { font-weight: 700; color: #0984E3; margin-bottom: 0.5rem; }
-	.cert-data { color: #888; font-size: 0.9rem; margin-bottom: 1.5rem; }
+	.cert-data { color: #555; font-size: 0.9rem; margin-bottom: 1.5rem; }
 	.cert-rodape { font-size: 0.75rem; color: #aaa; }
 
 	.btn-imprimir {

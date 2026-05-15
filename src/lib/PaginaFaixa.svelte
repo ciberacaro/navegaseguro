@@ -108,7 +108,7 @@
 
 	.voltar {
 		display: inline-block;
-		color: #888;
+		color: #555;
 		margin-bottom: 1.5rem;
 		transition: color 0.2s;
 	}

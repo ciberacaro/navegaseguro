@@ -110,7 +110,7 @@
 
 	.aviso {
 		font-size: 0.8rem;
-		color: #888;
+		color: #555;
 		margin-bottom: 1.25rem;
 		background: #fff9e6;
 		padding: 0.5rem 0.75rem;

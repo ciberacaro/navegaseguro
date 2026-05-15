@@ -109,7 +109,7 @@
 
 	.contador {
 		font-size: 0.8rem;
-		color: #888;
+		color: #555;
 		margin-bottom: 0.75rem;
 		text-transform: uppercase;
 		letter-spacing: 0.05em;

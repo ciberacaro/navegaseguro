@@ -226,7 +226,7 @@
 	.email-card strong { display: block; font-size: 0.85rem; color: #666; margin-bottom: 0.2rem; }
 	.email-card a { color: #0984E3; font-weight: 700; font-size: 1.05rem; }
 
-	.form-nota { font-size: 0.85rem; color: #888; font-style: italic; margin-bottom: 2rem; }
+	.form-nota { font-size: 0.85rem; color: #555; font-style: italic; margin-bottom: 2rem; }
 
 	.redes h3 { font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 1rem; margin-bottom: 1rem; }
 	.rede-item {
