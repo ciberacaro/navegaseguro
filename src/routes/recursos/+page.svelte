@@ -57,7 +57,7 @@
 			titulo: 'Educação e formação',
 			recursos: [
 				{ nome: 'C-Academy (CNCS)', desc: 'Academia gratuita de cibersegurança em português, com cursos para todos os níveis. Certificada pelo CNCS.', url: 'https://www.cncs.gov.pt/pt/c-academy', tag: 'Educação' },
-				{ nome: 'Portal Aprende.pt', desc: 'Recursos educativos do governo português, incluindo módulos sobre cidadania digital e literacia mediática.', url: 'https://www.aprende.gov.pt', tag: 'Educação' },
+				{ nome: 'DGE — Direção-Geral da Educação', desc: 'Portal oficial do Ministério da Educação com recursos sobre cidadania digital, literacia mediática e segurança online para escolas.', url: 'https://www.dge.mec.pt', tag: 'Educação' },
 				{ nome: 'Better Internet for Kids', desc: 'Portal europeu de internet segura para crianças. Material multilingue, incluindo português.', url: 'https://www.betterinternetforkids.eu', tag: 'Educação' }
 			]
 		}
