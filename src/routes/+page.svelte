@@ -165,9 +165,9 @@
 					<strong>116 006</strong>
 					<span>APAV — Apoio à Vítima</span>
 				</a>
-				<a href="tel:18002122" class="contacto-card">
+				<a href="tel:800219090" class="contacto-card">
 					<span>🛡️</span>
-					<strong>1800 21 22 23</strong>
+					<strong>800 21 90 90</strong>
 					<span>Linha Internet Segura (gratuita)</span>
 				</a>
 				<a href="tel:112" class="contacto-card">

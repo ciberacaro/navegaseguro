@@ -31,7 +31,7 @@
 			<a href="/recursos">Recursos oficiais</a>
 			<a href="/glossario">Glossário</a>
 		</div>
-		<p class="footer-note">Parceria com CNCS · SeguraNet · GNR · Linha Internet Segura 1800 21 22 23</p>
+		<p class="footer-note">Parceria com CNCS · SeguraNet · GNR · Linha Internet Segura 800 21 90 90</p>
 	</div>
 </footer>
 

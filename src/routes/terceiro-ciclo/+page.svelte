@@ -13,12 +13,12 @@
 			{
 				icone: '📷',
 				titulo: 'Imagens íntimas: o que precisas mesmo de saber',
-				conteudo: 'Partilhar imagens íntimas é sempre arriscado — mesmo com alguém em quem confias hoje. Em Portugal, divulgar imagens íntimas sem consentimento é crime (art. 193º-A do Código Penal). Se já enviaste ou estás a ser pressionado, há ajuda: 1800 21 22 23 (Linha Internet Segura, gratuita e confidencial).'
+				conteudo: 'Partilhar imagens íntimas é sempre arriscado — mesmo com alguém em quem confias hoje. Em Portugal, divulgar imagens íntimas sem consentimento é crime (art. 193º-A do Código Penal). Se já enviaste ou estás a ser pressionado, há ajuda: 800 21 90 90 (Linha Internet Segura, gratuita e confidencial).'
 			},
 			{
 				icone: '🎭',
 				titulo: 'Sextorsão',
-				conteudo: 'Alguém ameaça partilhar imagens tuas se não pagares ou enviares mais. Conselho de quem sabe: NÃO PAGUES. Pagar nunca para a chantagem — só confirma que estás vulnerável. Bloqueia, guarda as provas (capturas de ecrã) e fala com um adulto ou liga 1800 21 22 23.'
+				conteudo: 'Alguém ameaça partilhar imagens tuas se não pagares ou enviares mais. Conselho de quem sabe: NÃO PAGUES. Pagar nunca para a chantagem — só confirma que estás vulnerável. Bloqueia, guarda as provas (capturas de ecrã) e fala com um adulto ou liga 800 21 90 90.'
 			},
 			{
 				icone: '🤖',
@@ -45,7 +45,7 @@
 			'NUNCA partilhes imagens íntimas — de ti ou de outros',
 			'Se receberes imagens íntimas de um colega, não reencaminhes (mesmo "por brincadeira") — pode ser crime',
 			'Ativa a verificação em dois passos em todas as tuas contas (Instagram, TikTok, Discord, email)',
-			'Se alguém te ameaçar com imagens, NÃO PAGUES e NÃO ENVIES MAIS — fala com um adulto ou 1800 21 22 23',
+			'Se alguém te ameaçar com imagens, NÃO PAGUES e NÃO ENVIES MAIS — fala com um adulto ou 800 21 90 90',
 			'Faz hoje uma pesquisa do teu nome no Google e remove o que não queres',
 			'Numa relação saudável, ninguém pede acesso às contas do outro'
 		],
@@ -75,7 +75,7 @@
 			},
 			{
 				pergunta: 'Alguém online ameaça publicar imagens tuas se não enviares mais. Tu...',
-				opcoes: ['Envio mais para ele parar', 'Pago o que ele pedir', 'Não envio nem pago — bloqueio, guardo provas e ligo 1800 21 22 23', 'Apago tudo e finjo que não aconteceu'],
+				opcoes: ['Envio mais para ele parar', 'Pago o que ele pedir', 'Não envio nem pago — bloqueio, guardo provas e ligo 800 21 90 90', 'Apago tudo e finjo que não aconteceu'],
 				correta: 2,
 				explicacao: 'Ceder NUNCA para a chantagem — só prova que estás vulnerável. Guardar as provas (capturas) é essencial para a polícia. A Linha Internet Segura é gratuita e confidencial.'
 			},
@@ -125,7 +125,7 @@
 				pergunta: 'Se uma imagem tua íntima já está a circular, tu...',
 				opcoes: ['A culpa é tua por teres enviado', 'Não tens culpa — quem divulgou cometeu o crime. Pede ajuda imediata', 'Não tens nada a fazer', 'Tens de mudar de escola'],
 				correta: 1,
-				explicacao: 'Culpar a vítima é uma das maiores injustiças. Mesmo que tenhas enviado, a divulgação SEM consentimento é o crime. Pede ajuda: 1800 21 22 23 ou Polícia Judiciária.'
+				explicacao: 'Culpar a vítima é uma das maiores injustiças. Mesmo que tenhas enviado, a divulgação SEM consentimento é o crime. Pede ajuda: 800 21 90 90 ou Polícia Judiciária.'
 			}
 		]
 	};

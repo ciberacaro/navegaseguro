@@ -53,7 +53,7 @@
 			'NUNCA permita que alguém aceda ao seu computador à distância',
 			'Combine com a família uma palavra-código secreta — para confirmar emergências verdadeiras',
 			'Em caso de dúvida, fale com um familiar ANTES de tomar qualquer decisão financeira',
-			'Se já caiu numa burla, não tenha vergonha — ligue 1800 21 22 23 ou queixe-se na PSP/GNR',
+			'Se já caiu numa burla, não tenha vergonha — ligue 800 21 90 90 ou queixe-se na PSP/GNR',
 			'Mantenha o telemóvel e o computador atualizados — as atualizações são protecção'
 		],
 		historias: [
@@ -124,7 +124,7 @@
 			},
 			{
 				pergunta: 'Já caiu numa burla e perdeu 2.000€. O que deve fazer?',
-				opcoes: ['Ter vergonha e não contar a ninguém', 'Ligar para 1800 21 22 23 e queixar-se na PSP/GNR — sem vergonha', 'Tentar resolver sozinho', 'Esperar para ver se o dinheiro volta'],
+				opcoes: ['Ter vergonha e não contar a ninguém', 'Ligar para 800 21 90 90 e queixar-se na PSP/GNR — sem vergonha', 'Tentar resolver sozinho', 'Esperar para ver se o dinheiro volta'],
 				correta: 1,
 				explicacao: 'Vergonha é o que os burlões querem — para você não denunciar. Milhões de pessoas caem todos os anos, em todas as idades. A queixa ajuda-o e ajuda outros.'
 			},

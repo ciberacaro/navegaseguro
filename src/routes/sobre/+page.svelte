@@ -75,7 +75,7 @@
 		<h2>Em caso de emergência digital</h2>
 		<p>Se foi vítima de um crime online ou precisa de ajuda urgente:</p>
 		<div class="emergencia">
-			<div>📞 <strong>1800 21 22 23</strong> — Linha Internet Segura (gratuita, 24h)</div>
+			<div>📞 <strong>800 21 90 90</strong> — Linha Internet Segura (gratuita, 24h)</div>
 			<div>🚨 <strong>112</strong> — Emergência</div>
 			<div>🛡️ <strong>116</strong> — Apoio a Vítimas de Crime</div>
 		</div>

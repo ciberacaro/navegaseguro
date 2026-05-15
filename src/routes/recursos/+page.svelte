@@ -6,7 +6,7 @@
 				{ nome: 'CNCS — Centro Nacional de Cibersegurança', desc: 'Autoridade nacional de cibersegurança. Alertas, relatórios, recursos educativos e apoio a incidentes.', url: 'https://www.cncs.gov.pt', tag: 'Oficial' },
 				{ nome: 'CNPD — Comissão Nacional de Proteção de Dados', desc: 'Entidade que fiscaliza o cumprimento do RGPD em Portugal. Para queixas sobre uso indevido dos seus dados pessoais.', url: 'https://www.cnpd.pt', tag: 'RGPD' },
 				{ nome: 'SeguraNet', desc: 'Portal de segurança online para crianças, jovens, pais e professores. Criado pela DGE com apoio europeu.', url: 'https://www.seguranet.pt', tag: 'Educação' },
-				{ nome: 'Linha Internet Segura', desc: 'Linha gratuita de apoio a situações de risco online: 1800 21 22 23 (gratuita, 24h). Confidencial.', url: 'https://www.internetsegura.pt', tag: 'Apoio' },
+				{ nome: 'Linha Internet Segura', desc: 'Linha gratuita de apoio a situações de risco online: 800 21 90 90 (gratuita, 24h). Confidencial.', url: 'https://www.internetsegura.pt', tag: 'Apoio' },
 				{ nome: 'CMVM — Comissão do Mercado de Valores Mobiliários', desc: 'Verifica se uma plataforma de investimento tem autorização legal para operar em Portugal.', url: 'https://www.cmvm.pt', tag: 'Finanças' },
 				{ nome: 'Banco de Portugal — Portal do Cliente Bancário', desc: 'Informação sobre direitos dos clientes bancários e como reclamar de bancos em Portugal.', url: 'https://clientebancario.bportugal.pt', tag: 'Banca' },
 				{ nome: 'ANACOM', desc: 'Reguladora das comunicações em Portugal. Para queixas sobre operadoras de telecomunicações.', url: 'https://www.anacom.pt', tag: 'Telecom' },
@@ -64,7 +64,7 @@
 	];
 
 	const linhas = [
-		{ numero: '1800 21 22 23', nome: 'Linha Internet Segura', desc: 'Gratuita, 24 horas', cor: '#1DD1A1' },
+		{ numero: '800 21 90 90', nome: 'Linha Internet Segura', desc: 'Gratuita, 24 horas', cor: '#1DD1A1' },
 		{ numero: '112', nome: 'Emergência', desc: 'Situações de perigo imediato', cor: '#FF6B6B' },
 		{ numero: '116 006', nome: 'APAV — Apoio à Vítima', desc: 'Gratuita, confidencial', cor: '#A29BFE' },
 		{ numero: '213 544 545', nome: 'SOS Voz Amiga', desc: 'Apoio emocional', cor: '#0984E3' }
