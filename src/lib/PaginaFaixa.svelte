@@ -96,7 +96,7 @@
 	.topo {
 		background: linear-gradient(135deg, var(--fundo), white);
 		border-bottom: 3px solid var(--cor);
-		padding: 3rem 1.5rem 2.5rem;
+		padding: 4rem 1.5rem 2.5rem;
 		text-align: center;
 	}
 
@@ -329,7 +329,7 @@
 		font-size: 1.2rem;
 	}
 
-	.variante-senior .topo { padding: 4rem 1.5rem 3rem; }
+	.variante-senior .topo { padding: 5rem 1.5rem 3rem; }
 	.variante-senior .emoji-grande { font-size: 5rem; }
 	.variante-senior .topo h1 { font-size: clamp(2.2rem, 5vw, 3rem); }
 	.variante-senior .subtitulo { font-size: 1.25rem; }
@@ -411,7 +411,7 @@
 	.tema-brutalist .topo {
 		background: var(--cor);
 		border-bottom: 4px solid #000;
-		padding: 3rem 1.5rem 4rem;
+		padding: 4.5rem 1.5rem 4rem;
 		position: relative;
 		overflow: hidden;
 	}
@@ -591,7 +591,7 @@
 	.tema-editorial .topo {
 		background: #fdfcf8 !important;
 		border-bottom: 2px solid #1a1a1a !important;
-		padding: 4rem 1.5rem 3.5rem !important;
+		padding: 5rem 1.5rem 3.5rem !important;
 		text-align: left !important;
 	}
 	.tema-editorial .topo .container {
