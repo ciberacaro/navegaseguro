@@ -39,6 +39,16 @@
 				icone: '🔐',
 				titulo: 'Os teus direitos sob o RGPD',
 				conteudo: 'Já és titular de dados com direitos: saber que dados as empresas têm sobre ti, pedir cópia, exigir correção, pedir apagamento (direito ao esquecimento). Aprende a usar — empresas em Portugal têm 30 dias para responder, sem custos.'
+			},
+			{
+				icone: '📷',
+				titulo: 'Quishing: QR codes que te enganam',
+				conteudo: 'O QR code do parquímetro, do menu do restaurante ou do cartaz da rua pode ser um autocolante falso colado por cima do verdadeiro. Abre uma página de pagamento idêntica mas com domínio falso — e perdes o cartão. Regra: antes de inserir dados, confirma o domínio (deve ser o site oficial da entidade, ex: emel.pt, não emel-pagamentos.com). Em dúvida, paga pela app oficial ou escreve o endereço a partir do zero.'
+			},
+			{
+				icone: '🗝️',
+				titulo: 'Passkeys: o fim das passwords?',
+				conteudo: 'Passkeys (chaves de acesso) estão a substituir progressivamente as passwords no Google, Apple, Microsoft, bancos. Funcionam por biometria (impressão digital, Face ID) e ficam vinculadas ao site real — não podem ser roubadas por phishing porque um site falso nem sequer consegue pedir a passkey. Ativa nas tuas contas principais: Definições > Segurança > Chave de acesso. É mais seguro QUE password + 2FA.'
 			}
 		],
 		dicas: [

@@ -1,4 +1,4 @@
-const CACHE = 'navegaseguro-v2';
+const CACHE = 'navegaseguro-v3';
 
 const PRECACHE = [
   '/',

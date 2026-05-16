@@ -46,6 +46,11 @@
 				conteudo: 'Uma nova forma de phishing: autocolantes com QR codes falsos são colocados por cima dos originais em parquímetros, restaurantes, carregadores de VE e receção de hotéis. Ao ler o código, é enviado para uma página de pagamento falsa. Antes de pagar por QR code, verifique se o código está sobreposto e se o URL do site que abre corresponde à empresa esperada (ex: emel.pt, edp.pt). Em caso de dúvida, prefira a app oficial ou escreva o endereço manualmente.'
 			},
 			{
+				icone: '🗝️',
+				titulo: 'Passkeys: o fim das passwords roubadas',
+				conteudo: 'As passkeys (chaves de acesso) são a evolução das passwords: usam biometria (impressão digital, Face ID) e estão criptograficamente vinculadas ao site real. Mesmo que um site falso pareça idêntico, não consegue pedir a passkey — é resistente a phishing por natureza. Os principais bancos portugueses estão a adotá-las. Ative na app oficial do banco e nas contas críticas (Google, Apple, Microsoft, email principal). Atenção: a ativação é sempre dentro da app oficial — emails ou SMS a "convidar" para ativar passkeys com link externo são phishing.'
+			},
+			{
 				icone: '📵',
 				titulo: 'SIM Swap: quando roubam o seu número de telemóvel',
 				conteudo: 'Criminosos que já têm os seus dados pessoais (obtidos por phishing) contactam a sua operadora e convencem a transferir o seu número para um SIM novo. Com o número deles, recebem todos os SMS de autenticação bancária. Sinal de alerta: o telemóvel perde repentinamente o sinal sem causa aparente. Se isto acontecer, ligue imediatamente à operadora e ao banco. Para se proteger: use app de autenticação (Authy, Google Authenticator) em vez de SMS para 2FA bancário; peça à operadora para bloquear portabilidade sem presença em loja.'

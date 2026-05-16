@@ -71,6 +71,58 @@
 		</div>
 	</section>
 
+	<section class="acessibilidade">
+		<h2>Acessibilidade</h2>
+		<p>O NavegaSeguro foi desenhado para WCAG 2.1 AA. Tem disponíveis estas opções:</p>
+
+		<div class="opcoes-a11y">
+			<div class="opcao">
+				<span class="opcao-icone" aria-hidden="true">A+</span>
+				<div>
+					<strong>Tamanho da letra</strong>
+					<p>Botão "A" no topo direito alterna entre <strong>normal</strong>, <strong>grande (A+)</strong> e <strong>muito grande (A++)</strong>. A preferência é guardada no teu browser.</p>
+				</div>
+			</div>
+			<div class="opcao">
+				<span class="opcao-icone" aria-hidden="true">◑</span>
+				<div>
+					<strong>Alto contraste</strong>
+					<p>Botão "◑" no topo direito ativa fundo preto, texto branco e ligações amarelas — ideal para baixa visão. Persistente entre sessões.</p>
+				</div>
+			</div>
+			<div class="opcao">
+				<span class="opcao-icone" aria-hidden="true">🔊</span>
+				<div>
+					<strong>Leitor de voz</strong>
+					<p>Botão flutuante "🔊" no canto inferior esquerdo lê em voz alta a página. Usa a síntese de voz do sistema (português).</p>
+				</div>
+			</div>
+			<div class="opcao">
+				<span class="opcao-icone" aria-hidden="true">⌨️</span>
+				<div>
+					<strong>Navegação por teclado</strong>
+					<p>Todas as funcionalidades acessíveis por teclado. Os principais atalhos estão em baixo.</p>
+				</div>
+			</div>
+		</div>
+
+		<h3>Atalhos de teclado</h3>
+		<div class="tabela-atalhos">
+			<div class="linha-atalho cabecalho"><span>Tecla</span><span>Acção</span></div>
+			<div class="linha-atalho"><span><kbd>Tab</kbd></span><span>Avançar entre links, botões e campos</span></div>
+			<div class="linha-atalho"><span><kbd>Shift</kbd> + <kbd>Tab</kbd></span><span>Retroceder entre elementos</span></div>
+			<div class="linha-atalho"><span><kbd>Enter</kbd></span><span>Ativar link ou botão</span></div>
+			<div class="linha-atalho"><span><kbd>Espaço</kbd></span><span>Ativar botão; nos simuladores, revelar/ocultar dica</span></div>
+			<div class="linha-atalho"><span><kbd>Esc</kbd></span><span>Fechar tooltips e menus; cancelar diálogos</span></div>
+			<div class="linha-atalho"><span><kbd>↑</kbd> / <kbd>↓</kbd></span><span>Navegar entre opções em listas e quizzes</span></div>
+			<div class="linha-atalho"><span><kbd>→</kbd> / <kbd>←</kbd></span><span>No modo apresentador (educadores): próxima/anterior pergunta</span></div>
+			<div class="linha-atalho"><span><kbd>R</kbd></span><span>No modo apresentador: mostrar/ocultar resposta</span></div>
+		</div>
+
+		<p class="nota-a11y">No início de cada página, o link "Saltar para o conteúdo" aparece ao pressionar <kbd>Tab</kbd> — permite ignorar o menu e ir directo ao conteúdo principal.</p>
+		<p class="nota-a11y">Se encontrar uma barreira de acessibilidade, <a href="/contacto">contacte-nos</a> — é prioridade corrigir.</p>
+	</section>
+
 	<section class="contacto">
 		<h2>Em caso de emergência digital</h2>
 		<p>Se foi vítima de um crime online ou precisa de ajuda urgente:</p>
@@ -200,6 +252,103 @@
 		text-transform: uppercase;
 		letter-spacing: 0.05em;
 	}
+
+	.acessibilidade p {
+		color: #444;
+		line-height: 1.7;
+		margin-bottom: 1rem;
+	}
+
+	.acessibilidade h3 {
+		font-family: 'Nunito', sans-serif;
+		font-size: 1.1rem;
+		font-weight: 800;
+		margin: 1.75rem 0 0.75rem;
+		color: #1a1a2e;
+	}
+
+	.opcoes-a11y {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+		gap: 1rem;
+		margin: 1.25rem 0 0.5rem;
+	}
+
+	.opcao {
+		display: flex;
+		gap: 0.85rem;
+		align-items: flex-start;
+		background: #f8f9fa;
+		border: 1px solid #e0e0e0;
+		border-radius: 0.75rem;
+		padding: 1rem;
+	}
+
+	.opcao-icone {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		width: 42px;
+		height: 42px;
+		border-radius: 50%;
+		background: #1a1a2e;
+		color: white;
+		font-weight: 700;
+		font-size: 1.05rem;
+		flex-shrink: 0;
+	}
+
+	.opcao strong { display: block; font-size: 0.95rem; color: #1a1a2e; margin-bottom: 0.25rem; }
+	.opcao p { font-size: 0.85rem; color: #555; line-height: 1.5; margin: 0; }
+
+	.tabela-atalhos {
+		border-radius: 0.75rem;
+		overflow: hidden;
+		border: 1px solid #e5e7eb;
+		margin-top: 0.75rem;
+	}
+
+	.linha-atalho {
+		display: grid;
+		grid-template-columns: minmax(140px, max-content) 1fr;
+		gap: 1rem;
+		padding: 0.65rem 1.1rem;
+		border-bottom: 1px solid #f0f0f0;
+		font-size: 0.88rem;
+		background: #fff;
+		align-items: center;
+	}
+	.linha-atalho:last-child { border-bottom: none; }
+	.linha-atalho.cabecalho {
+		background: #1a1a2e;
+		color: white;
+		font-weight: 700;
+		font-size: 0.78rem;
+		text-transform: uppercase;
+		letter-spacing: 0.05em;
+	}
+
+	kbd {
+		display: inline-block;
+		background: #f5f5f5;
+		border: 1px solid #d0d0d0;
+		border-bottom-width: 2px;
+		border-radius: 0.3rem;
+		padding: 0.1rem 0.5rem;
+		font-family: 'Courier New', monospace;
+		font-size: 0.82rem;
+		color: #1a1a2e;
+		min-width: 1.5rem;
+		text-align: center;
+	}
+
+	.nota-a11y {
+		font-size: 0.85rem;
+		color: #555;
+		margin-top: 1rem;
+		line-height: 1.55;
+	}
+	.nota-a11y a { color: #0984E3; text-decoration: underline; }
 
 	.emergencia {
 		background: #FFF5E6;

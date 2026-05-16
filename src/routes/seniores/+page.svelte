@@ -44,6 +44,16 @@
 				icone: '🏥',
 				titulo: 'Falsos médicos, advogados ou seguradoras',
 				conteudo: 'Ligações a dizer que um familiar teve acidente, ou que ganhou uma indemnização, ou que precisa de pagar taxa urgente — antes de fazer fosse o que fosse, ligue para a pessoa que disse estar em apuros, ou para a entidade pelo número oficial. Nunca pelos números que lhe deram pela chamada.'
+			},
+			{
+				icone: '🎙️',
+				titulo: 'Vozes clonadas por inteligência artificial',
+				conteudo: 'Já é possível fazer uma voz parecida com a do seu filho ou neto a partir de poucos segundos de áudio (uma mensagem no WhatsApp, um vídeo no Facebook chega). Por isso, a regra antiga — "reconheci a voz, é mesmo ele" — já não é segura. A regra nova: combine uma PALAVRA-CÓDIGO secreta com a família. Quando alguém pedir dinheiro urgente, peça a palavra-código. Se hesita ou inventa, é burla. Os burlões não sabem a palavra.'
+			},
+			{
+				icone: '📷',
+				titulo: 'QR codes falsos em parquímetros e lojas',
+				conteudo: 'Cuidado novo nos parquímetros, postos de carregamento e cafés: alguns QR codes são autocolantes falsos, colocados por cima dos verdadeiros. Quando lê o código, abre uma página de pagamento que parece verdadeira mas é falsa — e os criminosos ficam com os dados do seu cartão. Antes de pagar: 1) verifique se o autocolante está colado por cima de outro (descole levemente um canto se puder); 2) prefira pagar com moedas ou com o cartão diretamente na máquina, nunca por QR code que pareça suspeito.'
 			}
 		],
 		dicas: [

@@ -2,6 +2,8 @@
 	import VerificadorPassword from '$lib/VerificadorPassword.svelte';
 	import GeradorFrase from '$lib/GeradorFrase.svelte';
 	import SimuladorFraude from '$lib/SimuladorFraude.svelte';
+	import VerificadorURL from '$lib/VerificadorURL.svelte';
+	import AnalisadorSMS from '$lib/AnalisadorSMS.svelte';
 </script>
 
 <svelte:head>
@@ -86,6 +88,18 @@
 				<span class="seta">→</span>
 			</a>
 		</div>
+	</section>
+
+	<section>
+		<h2>Verificador de URL / QR Code</h2>
+		<p class="secao-desc">Cola um link suspeito (ou o destino de um QR code) e analisa heuristicamente o domínio — lookalikes de bancos PT, encurtadores, TLDs de risco e sinais de phishing.</p>
+		<VerificadorURL />
+	</section>
+
+	<section>
+		<h2>Analisador de SMS / mensagem suspeita</h2>
+		<p class="secao-desc">Cola o texto de um SMS, email ou WhatsApp suspeito. A análise sinaliza padrões típicos de fraude — urgência, marcas imitadas, pedido de dados, falso familiar.</p>
+		<AnalisadorSMS />
 	</section>
 
 	<section>
