@@ -249,7 +249,7 @@
 	.topo {
 		background: linear-gradient(135deg, #1a1a2e, #16213e);
 		color: white;
-		padding: 3rem 1.5rem 2.5rem;
+		padding: 4rem 1.5rem 2.5rem;
 		text-align: center;
 	}
 	.container { max-width: 860px; margin: 0 auto; padding: 0 1.5rem; }
