@@ -1,6 +1,72 @@
 <script>
 	const noticias = [
 		{
+			id: 'n16',
+			data: '2026-05-14',
+			nivel: 'alto',
+			fonte: 'CNCS / Câmaras Municipais',
+			fonteUrl: 'https://www.cncs.gov.pt',
+			titulo: 'Quishing: QR codes falsos detetados em parquímetros e carregadores de VE em Lisboa e Porto',
+			resumo: 'Autoridades municipais e o CNCS alertam para autocolantes com QR codes fraudulentos sobrepostos sobre os originais em parquímetros e postos de carregamento de veículos elétricos. A técnica — "quishing" (phishing via QR code) — redireciona para páginas de pagamento falsas que capturam dados de cartão.',
+			como_reconhecer: [
+				'QR code parece um autocolante colocado por cima de outro',
+				'A página de destino não tem o domínio esperado (câmara, EDP, Galp, EMEL)',
+				'URL usa http:// (sem "s") ou domínio inventado como "pagamento-parque.com"',
+				'Pede número e CVV do cartão em vez de abrir app oficial'
+			],
+			o_que_fazer: 'Não pague por QR code com aparência suspeita. Verifique fisicamente se o código está sobreposto. Use as apps oficiais ou escreva o endereço no browser. Denuncie autocolantes suspeitos ao estabelecimento ou à câmara municipal.',
+			tags: ['quishing', 'QR code', 'pagamento', 'novo']
+		},
+		{
+			id: 'n15',
+			data: '2026-05-05',
+			nivel: 'alto',
+			fonte: 'PJ — UNC3T',
+			fonteUrl: 'https://www.policiajudiciaria.pt',
+			titulo: 'SIM Swap em Portugal: criminosos convencem operadoras a transferir números de telemóvel',
+			resumo: 'A Polícia Judiciária registou um aumento de 40% em casos de SIM swap no primeiro trimestre de 2026. Os atacantes contactam a operadora da vítima com dados pessoais obtidos por phishing, convencem a transferir o número para um novo SIM, e intercetam todos os SMS de autenticação bancária.',
+			como_reconhecer: [
+				'O telemóvel perde repentinamente o sinal sem razão aparente',
+				'Notificações de SMS de autenticação que não pediu',
+				'Alertas de movimentos bancários não autorizados',
+				'Impossibilidade de fazer chamadas ou aceder a dados móveis'
+			],
+			o_que_fazer: 'Se o telemóvel perder sinal subitamente, contacte de imediato a operadora e o banco. Prefira app de autenticação (Authy, Google Authenticator) em vez de SMS para 2FA. Para contas críticas, peça à operadora para bloquear portabilidade de número sem presença em loja.',
+			tags: ['SIM swap', '2FA', 'Banca', 'Operadoras']
+		},
+		{
+			id: 'n14',
+			data: '2026-04-20',
+			nivel: 'baixo',
+			fonte: 'SIBS / Banco de Portugal',
+			fonteUrl: 'https://www.bportugal.pt',
+			titulo: 'Bancos portugueses começam a implementar passkeys — adeus às passwords bancárias',
+			resumo: 'Vários bancos portugueses anunciaram a adoção progressiva de passkeys (chaves de acesso) para homebanking em substituição de passwords. Passkeys são resistentes a phishing por natureza: são criptograficamente vinculadas ao domínio legítimo e não podem ser roubadas por sites falsos.',
+			como_reconhecer: [
+				'Este é um desenvolvimento positivo — não há sinais de fraude associados',
+				'Verifique na app do seu banco se já tem a opção "chave de acesso" ou "passkey"',
+				'A ativação é feita na app oficial, nunca por SMS ou email'
+			],
+			o_que_fazer: 'Ative a passkey na app oficial do seu banco quando disponível. Se receber email ou SMS a "convidá-lo" a ativar passkeys com link externo — é phishing. A ativação é sempre feita dentro da app.',
+			tags: ['passkeys', 'banca', 'segurança', 'positivo']
+		},
+		{
+			id: 'n13',
+			data: '2026-04-08',
+			nivel: 'medio',
+			fonte: 'Meta / Linha Internet Segura',
+			fonteUrl: 'https://www.internetsegura.pt',
+			titulo: 'Sequestro de contas WhatsApp pelo código de 6 dígitos — casos triplicaram',
+			resumo: 'A Linha Internet Segura reporta triplicação de casos de sequestro de contas WhatsApp em 2026. O método: a vítima recebe SMS com código de verificação não solicitado, seguido de mensagem de "amigo" a pedir para reencaminhar "por engano". Ao partilhar o código, entrega o acesso completo à conta.',
+			como_reconhecer: [
+				'SMS com código WhatsApp que não pediu',
+				'Mensagem de contacto conhecido a pedir para reencaminhar um código',
+				'Pedido urgente e com desculpa de "enviei para o número errado"'
+			],
+			o_que_fazer: 'NUNCA partilhe códigos de verificação — com ninguém. Ative a verificação em dois passos no WhatsApp (Definições > Conta > Verificação em dois passos). Se a conta foi comprometida, contacte o suporte da Meta em wa.me/faq.',
+			tags: ['WhatsApp', 'sequestro de conta', 'código OTP']
+		},
+		{
 			id: 'n12',
 			data: '2026-05-12',
 			nivel: 'alto',

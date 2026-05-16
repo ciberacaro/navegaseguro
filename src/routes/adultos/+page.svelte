@@ -41,6 +41,16 @@
 				conteudo: 'Pessoa "perfeita" no Tinder/Bumble, conversa por semanas, nunca quer videochamada (ou só faz uma rápida), depois aparece uma emergência: hospital, viagem cancelada, oportunidade de investimento conjunto. Pede dinheiro. Em Portugal há milhões de euros perdidos anualmente assim. Regra: nunca empreste a quem nunca conheceu pessoalmente.'
 			},
 			{
+				icone: '📷',
+				titulo: 'Quishing: QR codes que roubam o seu cartão',
+				conteudo: 'Uma nova forma de phishing: autocolantes com QR codes falsos são colocados por cima dos originais em parquímetros, restaurantes, carregadores de VE e receção de hotéis. Ao ler o código, é enviado para uma página de pagamento falsa. Antes de pagar por QR code, verifique se o código está sobreposto e se o URL do site que abre corresponde à empresa esperada (ex: emel.pt, edp.pt). Em caso de dúvida, prefira a app oficial ou escreva o endereço manualmente.'
+			},
+			{
+				icone: '📵',
+				titulo: 'SIM Swap: quando roubam o seu número de telemóvel',
+				conteudo: 'Criminosos que já têm os seus dados pessoais (obtidos por phishing) contactam a sua operadora e convencem a transferir o seu número para um SIM novo. Com o número deles, recebem todos os SMS de autenticação bancária. Sinal de alerta: o telemóvel perde repentinamente o sinal sem causa aparente. Se isto acontecer, ligue imediatamente à operadora e ao banco. Para se proteger: use app de autenticação (Authy, Google Authenticator) em vez de SMS para 2FA bancário; peça à operadora para bloquear portabilidade sem presença em loja.'
+			},
+			{
 				icone: '⚖️',
 				titulo: 'RGPD: os seus direitos como cidadão',
 				conteudo: 'Tem direito a saber que dados as empresas têm sobre si, a corrigi-los, a pedir apagamento, a portar para outro fornecedor. As empresas têm 30 dias para responder, gratuitamente. Em caso de incumprimento, queixa à CNPD (cnpd.pt). Aplica-se a empresas em Portugal e fora — desde que tratem dados de portugueses.'
@@ -56,6 +66,9 @@
 			'Antes de clicar num link, passe o rato em cima — veja o endereço real no canto do browser',
 			'Ative alertas de movimentos na app do banco — sabe ao segundo qualquer débito',
 			'Use 2FA por aplicação (Authy) em vez de SMS — protege contra SIM swap',
+			'Verifique QR codes antes de pagar: o autocolante está colado por cima? O URL é o site oficial?',
+			'Se o telemóvel perder sinal de repente, ligue à operadora e ao banco — pode ser SIM swap',
+			'Ative passkeys (chaves de acesso) na app do banco quando disponível — são resistentes a phishing',
 			'Cuidado especial com pedidos urgentes — a fraude depende de te impedir de pensar',
 			'Para receber por MB Way, só precisa do nº de telemóvel — quem pede NIF está a tentar burlá-lo',
 			'Faça pesquisa de imagem inversa (Google Images) de perfis de namoro suspeitos — fotos roubadas aparecem',
@@ -138,6 +151,18 @@
 				opcoes: ['Oportunidade — preço bom', 'Burla clássica de arrendamento — nunca pague antes de visitar', 'Aceitável se for por transferência segura', 'Depende das fotos'],
 				correta: 1,
 				explicacao: 'Padrão repetido em mil casos. Casas a preço abaixo do mercado + dono no estrangeiro + pedido de sinal antes de visitar = fraude garantida. Nunca pague antes de ver pessoalmente.'
+			},
+			{
+				pergunta: 'Vai pagar o estacionamento e lê o QR code no parquímetro. O site que abre pede dados do cartão. O que verifica primeiro?',
+				opcoes: ['Se o valor está correto', 'Se o QR code é um autocolante sobreposto e se o URL é o site oficial (ex: emel.pt)', 'Se o site tem logótipo', 'Se outros estacionaram com o mesmo parquímetro'],
+				correta: 1,
+				explicacao: '"Quishing" — QR codes falsos em parquímetros — é a nova forma de phishing. Um autocolante sobreposto ao original e um domínio falso são os sinais. Sempre verifique fisicamente e o URL antes de introduzir dados do cartão.'
+			},
+			{
+				pergunta: 'O telemóvel perde repentinamente o sinal durante horas, sem razão. É provavelmente:',
+				opcoes: ['Avaria da operadora — espere', 'Possível SIM swap — contacte operadora e banco imediatamente', 'Bateria fraca', 'Problema no router de casa'],
+				correta: 1,
+				explicacao: 'SIM swap — onde o seu número é portado fraudulentamente — provoca perda de sinal imediata. Nesse intervalo, atacantes recebem todos os SMS de autenticação bancária. Reaja rápido: operadora + banco + bloqueio preventivo.'
 			}
 		]
 	};

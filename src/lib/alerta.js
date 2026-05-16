@@ -1,14 +1,15 @@
 // Atualiza este ficheiro e faz push para mudar o alerta na homepage.
 export const alerta = {
-	titulo: 'Falsos SMS da EDP em circulação',
-	descricao: 'Estão a circular SMS com o nome da EDP a pedir atualização de dados de faturação. A EDP não solicita dados de pagamento por SMS.',
+	titulo: 'QR codes falsos em parquímetros e carregadores de VE',
+	descricao: 'Estão a ser detetados em Portugal autocolantes com QR codes falsos sobrepostos sobre os originais em parquímetros, cafés e postos de carregamento de veículos elétricos. Levam a páginas de pagamento falsas que roubam dados do cartão.',
 	data: 'Maio 2026',
-	nivel: 'alto', // 'alto' | 'medio' | 'baixo'
-	tags: ['SMS', 'Phishing', 'Energia'],
+	nivel: 'alto',
+	tags: ['Quishing', 'QR Code', 'Pagamento'],
 	como_reconhecer: [
-		'SMS de número desconhecido mas com nome "EDP" no campo remetente',
-		'Link que não termina em ".edp.pt"',
-		'Urgência: "atualize em 24h ou o serviço será suspenso"'
+		'QR code que parece um autocolante colado por cima do original',
+		'A página de pagamento não tem o nome da empresa esperada (EDP, Galp, câmara municipal)',
+		'URL começa por http:// (sem "s") ou tem domínio não oficial',
+		'Pede dados do cartão em vez de redirecionar para a app oficial'
 	],
-	o_que_fazer: 'Apague a mensagem. Se tiver dúvidas sobre a sua conta, aceda diretamente a edp.pt escrevendo no browser — nunca pelo link do SMS.'
+	o_que_fazer: 'Não pague por QR code que lhe pareça suspeito. Verifique fisicamente se o código está colado por cima de outro. Use sempre as apps oficiais ou escreva o endereço no browser. Denuncie autocolantes suspeitos à câmara municipal ou ao estabelecimento.'
 };

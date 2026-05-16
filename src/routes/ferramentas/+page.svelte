@@ -41,7 +41,7 @@
 				<span>📁</span>
 				<div>
 					<strong>Arquivo de Casos Reais</strong>
-					<p>30 burlas documentadas em Portugal, com filtros</p>
+					<p>35 burlas documentadas em Portugal, com filtros</p>
 				</div>
 				<span class="seta">→</span>
 			</a>

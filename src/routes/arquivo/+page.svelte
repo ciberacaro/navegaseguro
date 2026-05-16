@@ -490,6 +490,87 @@
 			],
 			desfecho: 'A vítima forneceu o código. O atacante usou-o para aceder remotamente ao router e à rede doméstica. Não houve perda financeira imediata mas comprometimento total da rede.',
 			prejuizo: 'Acesso completo à rede doméstica'
+		},
+		{
+			id: 31,
+			data: '2026-03',
+			tipo: 'phishing',
+			canal: 'Telefone',
+			titulo: 'SIM Swap: conta bancária esvaziada após portabilidade fraudulenta',
+			descricao: 'A vítima perdeu o sinal do telemóvel durante cerca de duas horas. Nesse intervalo, atacantes que já tinham o NIF e número de conta (obtidos por phishing anterior) convenceram a operadora a transferir o número para um novo SIM. Com o número, receberam todos os SMS de autenticação bancária e efetuaram transferências.',
+			sinais: [
+				'Perda total de sinal sem razão aparente (não é avaria — é SIM swap)',
+				'SMS de autenticação do banco para operações que não iniciou',
+				'Impossibilidade de ligar ou aceder a dados móveis',
+				'Notificação de novo dispositivo na app do banco'
+			],
+			desfecho: 'A vítima perdeu 4.800€ em transferências efetuadas em menos de duas horas. O banco reembolsou parcialmente após processo.',
+			prejuizo: '4.800€ (parcialmente recuperado)'
+		},
+		{
+			id: 32,
+			data: '2026-04',
+			tipo: 'phishing',
+			canal: 'QR Code',
+			titulo: 'Quishing: QR code falso no parquímetro levou a página de pagamento fraudulenta',
+			descricao: 'A vítima leu um QR code num parquímetro em Lisboa. O código — um autocolante sobreposto ao original — redirecionou para um site que imitava o sistema de pagamento da EMEL. Ao introduzir os dados do cartão para pagar o estacionamento, os dados foram capturados.',
+			sinais: [
+				'QR code era um autocolante sobre o design original do parquímetro',
+				'URL de destino era "emel-pagamentos.com" em vez de emel.pt',
+				'Site não tinha cadeado verde nem certificado válido',
+				'Pediu número completo do cartão, validade e CVV'
+			],
+			desfecho: 'Cartão de crédito comprometido. Realizadas compras online fraudulentas de 320€ antes de ser bloqueado.',
+			prejuizo: '320€'
+		},
+		{
+			id: 33,
+			data: '2026-02',
+			tipo: 'investimento',
+			canal: 'Redes sociais',
+			titulo: '"Pig butchering" no LinkedIn: seis meses de namoro a construir confiança antes da fraude',
+			descricao: 'A vítima foi contactada no LinkedIn por uma suposta executiva de Hong Kong. Após meses de conversa, ela apresentou uma "plataforma exclusiva de trading" onde mostrava lucros crescentes. A vítima investiu progressivamente, mas quando pediu o levantamento de 12.000€, a plataforma exigiu "impostos" de 2.000€. A plataforma era um frontend falso — o dinheiro nunca foi investido.',
+			sinais: [
+				'Contacto inicial profissional no LinkedIn que evolui para relação pessoal',
+				'Plataforma de investimento não registada na CMVM',
+				'Lucros visíveis no painel mas impossibilidade de levantar sem pagar taxas',
+				'"Taxas de libertação de fundos" — esquema clássico de pig butchering',
+				'Perfil com historial recente e ligações a desconhecidos'
+			],
+			desfecho: 'A vítima investiu 12.000€ ao longo de 4 meses e pagou mais 2.000€ em "taxas". Total: 14.000€ perdidos.',
+			prejuizo: '14.000€'
+		},
+		{
+			id: 34,
+			data: '2026-01',
+			tipo: 'phishing',
+			canal: 'WhatsApp',
+			titulo: 'Sequestro de conta WhatsApp pelo código de 6 dígitos',
+			descricao: 'A vítima recebeu SMS com código de verificação do WhatsApp. Segundos depois, uma mensagem de um "amigo" dizia: "Mandei o código para o teu número por engano — podes reenviar-mo?". Ao partilhar o código, o atacante tomou controlo completo da conta e usou-a para enviar pedidos de dinheiro a todos os contactos.',
+			sinais: [
+				'SMS com código WhatsApp não solicitado',
+				'Mensagem de contacto conhecido (já comprometido) a pedir o código',
+				'Argumento do "engano" para justificar o pedido',
+				'Urgência e pedido para não contar a ninguém'
+			],
+			desfecho: 'Conta perdida. Atacante enviou pedidos de dinheiro a dezenas de contactos da vítima, conseguindo 350€ de dois familiares.',
+			prejuizo: '350€ (familiares enganados) + conta comprometida'
+		},
+		{
+			id: 35,
+			data: '2025-12',
+			tipo: 'falso-tecnico',
+			canal: 'Browser',
+			titulo: 'Anúncio falso no Google leva a software de segurança com malware',
+			descricao: 'A vítima pesquisou "antivírus gratuito" no Google. O primeiro resultado era um anúncio pago que imitava a página do Avast. O software descarregado instalou um infostealer que roubou passwords guardadas no browser, cookies de sessão bancária e dados de preenchimento automático.',
+			sinais: [
+				'Anúncio no topo do Google (marcado como "Patrocinado")',
+				'Domínio do site era avast-download.net em vez de avast.com',
+				'Instalador pedia para desativar o Windows Defender durante a instalação',
+				'Após instalação, browser começou a redirecionar pesquisas'
+			],
+			desfecho: 'Passwords de email, banco e redes sociais comprometidas. Conta bancária acedida e 890€ transferidos.',
+			prejuizo: '890€ + múltiplas credenciais comprometidas'
 		}
 	];
 
@@ -522,11 +603,12 @@
 		'Site falso': '🖥️',
 		'OLX/Marketplace': '🛒',
 		'Browser': '🖥️',
-		'App de namoro': '❤️'
+		'App de namoro': '❤️',
+		'QR Code': '📷'
 	};
 
 	const todosTipos = Object.keys(tipoLabels);
-	const todosCanais = ['SMS', 'Email', 'Telefone', 'WhatsApp', 'Redes sociais', 'Site falso', 'OLX/Marketplace', 'Browser', 'App de namoro'];
+	const todosCanais = ['SMS', 'Email', 'Telefone', 'WhatsApp', 'Redes sociais', 'Site falso', 'OLX/Marketplace', 'Browser', 'App de namoro', 'QR Code'];
 
 	let filtroTipo = $state('');
 	let filtroCanal = $state('');
