@@ -1,4 +1,4 @@
-const CACHE = 'navegaseguro-v3';
+const CACHE = 'navegaseguro-v4';
 
 const PRECACHE = [
   '/',
@@ -10,6 +10,7 @@ const PRECACHE = [
   '/sobre',
   '/checklist',
   '/quiz-completo',
+  '/quiz-phishing',
   '/arquivo',
   '/emergencia',
   '/imprimir',
@@ -17,6 +18,9 @@ const PRECACHE = [
   '/educadores/fichas',
   '/educadores/avaliacao',
   '/contacto',
+  '/empresas',
+  '/calendario',
+  '/pesquisa',
   '/pre-escolar',
   '/primeiro-ciclo',
   '/segundo-ciclo',

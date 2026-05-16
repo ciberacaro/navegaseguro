@@ -81,6 +81,7 @@
 		</div>
 
 		<div class="nav-acoes">
+			<a class="a11y-btn pesquisa-btn" href="/pesquisa" aria-label="Pesquisar" title="Pesquisar">🔍</a>
 			<button class="a11y-btn" onclick={cicloLetra} aria-label="Tamanho da letra: {legendaLetra[tamanhoLetra]}" title="Tamanho da letra" class:ativo={tamanhoLetra !== 'normal'}>
 				{legendaLetra[tamanhoLetra]}
 			</button>
@@ -312,6 +313,7 @@
 	}
 	.a11y-btn:hover { border-color: #0984E3; color: #0984E3; }
 	.a11y-btn.ativo { background: #0984E3; border-color: #0984E3; color: #fff; }
+	a.a11y-btn { text-decoration: none; display: inline-flex; align-items: center; justify-content: center; }
 
 	.hamburger {
 		display: none;

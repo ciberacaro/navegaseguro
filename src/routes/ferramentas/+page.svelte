@@ -39,6 +39,38 @@
 				</div>
 				<span class="seta">→</span>
 			</a>
+			<a href="/quiz-phishing" class="card-link">
+				<span>🎯</span>
+				<div>
+					<strong>Quiz: Real ou Fraude?</strong>
+					<p>12 mensagens — classifica cada uma e aprende com os erros</p>
+				</div>
+				<span class="seta">→</span>
+			</a>
+			<a href="/empresas" class="card-link">
+				<span>🏢</span>
+				<div>
+					<strong>Empresas e Instituições</strong>
+					<p>Checklist e enquadramento RGPD/NIS2 para PME e setor público</p>
+				</div>
+				<span class="seta">→</span>
+			</a>
+			<a href="/calendario" class="card-link">
+				<span>📅</span>
+				<div>
+					<strong>Calendário de Cibersegurança</strong>
+					<p>Datas internacionais: Internet Segura, RGPD, Mês Europeu...</p>
+				</div>
+				<span class="seta">→</span>
+			</a>
+			<a href="/pesquisa" class="card-link">
+				<span>🔍</span>
+				<div>
+					<strong>Pesquisa global</strong>
+					<p>Procura em todo o conteúdo — faixas, casos, FAQ, glossário</p>
+				</div>
+				<span class="seta">→</span>
+			</a>
 			<a href="/arquivo" class="card-link">
 				<span>📁</span>
 				<div>
